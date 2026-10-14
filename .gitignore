@@ -1,0 +1,61 @@
+# =======================================================
+# BẢO MẬT & MÃ BÍ MẬT (TUYỆT ĐỐI KHÔNG PUSH LÊN GITHUB)
+# =======================================================
+.env
+*.env
+bot/sessions/
+*.session
+*.session-journal
+
+# Dữ liệu nhạy cảm người dùng, cookies, tokens live
+data/tokens_check_live.txt
+data/cookies/
+data/cookies_used/
+data/user_violations.json
+data/market_posts_tracker.json
+
+# File export tin nhắn thô và dữ liệu quá nặng
+bot/LLM Ai/result.json
+bot/LLM Ai/result2.json
+bot/LLM Ai/telegram_clean.csv
+bot/LLM Ai/dataset_backup.csv
+bot/LLM Ai/chatExport/
+bot/LLM Ai/phobert_kiguard_checkpoints/
+bot/LLM Ai/phobert_kiguard_best_model/
+bot/LLM Ai/*.zip
+data/bin-list-data.csv
+
+# Python environment & cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# IDE & OS
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db

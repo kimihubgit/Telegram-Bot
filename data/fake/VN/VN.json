@@ -1,0 +1,3821 @@
+{
+    "locations": [
+        {
+            "province": "Thành phố Hồ Chí Minh",
+            "zipcode": "700000",
+            "districts": [
+                {
+                    "district": "Quận 1",
+                    "wards": [
+                        {
+                            "ward": "Phường Bến Nghé",
+                            "streets": [
+                                "Đường Nguyễn Huệ",
+                                "Đường Lê Lợi"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Đa Kao",
+                            "streets": [
+                                "Đường Trần Hưng Đạo",
+                                "Đường Nguyễn Thị Minh Khai"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Bến Thành",
+                            "streets": [
+                                "Đường Lê Thánh Tôn",
+                                "Đường Phạm Hồng Thái"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Quận 2",
+                    "wards": [
+                        {
+                            "ward": "Phường An Phú",
+                            "streets": [
+                                "Đường Nguyễn Hoàng",
+                                "Đường Trần Não"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Thảo Điền",
+                            "streets": [
+                                "Đường Quốc Hương",
+                                "Đường Lương Định Của"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Bình An",
+                            "streets": [
+                                "Đường Bùi Văn Ba",
+                                "Đường Lê Văn Thịnh"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Quận 3",
+                    "wards": [
+                        {
+                            "ward": "Phường Võ Thị Sáu",
+                            "streets": [
+                                "Đường Võ Thị Sáu",
+                                "Đường Trần Quốc Toản"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Nguyễn Thái Bình",
+                            "streets": [
+                                "Đường Lê Văn Sĩ",
+                                "Đường Nguyễn Đình Chiểu"
+                            ]
+                        },
+                        {
+                            "ward": "Phường 6",
+                            "streets": [
+                                "Đường Trương Quốc Dung",
+                                "Đường Bà Huyện Thanh Quan"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Quận 4",
+                    "wards": [
+                        {
+                            "ward": "Phường 1",
+                            "streets": [
+                                "Đường Bến Vân Đồn",
+                                "Đường Tôn Thất Thuyết"
+                            ]
+                        },
+                        {
+                            "ward": "Phường 5",
+                            "streets": [
+                                "Đường Nguyễn Tất Thành",
+                                "Đường Hoàng Diệu"
+                            ]
+                        },
+                        {
+                            "ward": "Phường 7",
+                            "streets": [
+                                "Đường Đoàn Văn Bơ",
+                                "Đường Bùi Hữu Nghĩa"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Quận 5",
+                    "wards": [
+                        {
+                            "ward": "Phường 1",
+                            "streets": [
+                                "Đường Trần Bình Trọng",
+                                "Đường Nguyễn Trãi"
+                            ]
+                        },
+                        {
+                            "ward": "Phường 3",
+                            "streets": [
+                                "Đường Châu Văn Liêm",
+                                "Đường An Dương Vương"
+                            ]
+                        },
+                        {
+                            "ward": "Phường 5",
+                            "streets": [
+                                "Đường Lê Hồng Phong",
+                                "Đường Minh Phụng"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Quận 6",
+                    "wards": [
+                        {
+                            "ward": "Phường 1",
+                            "streets": [
+                                "Đường Hồng Bàng",
+                                "Đường Bình Tiên"
+                            ]
+                        },
+                        {
+                            "ward": "Phường 2",
+                            "streets": [
+                                "Đường Ngô Nhân Tịnh",
+                                "Đường Lê Quang Sung"
+                            ]
+                        },
+                        {
+                            "ward": "Phường 5",
+                            "streets": [
+                                "Đường Hồng Bàng",
+                                "Đường Phú Định"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Quận 7",
+                    "wards": [
+                        {
+                            "ward": "Phường Tân Phú",
+                            "streets": [
+                                "Đường Nguyễn Thị Thập",
+                                "Đường Đào Trí"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Phú Mỹ",
+                            "streets": [
+                                "Đường Nguyễn Hữu Thọ",
+                                "Đường Lê Văn Lương"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Tân Hưng",
+                            "streets": [
+                                "Đường Bùi Bằng Đoàn",
+                                "Đường Trần Xuân Soạn"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Quận 8",
+                    "wards": [
+                        {
+                            "ward": "Phường 1",
+                            "streets": [
+                                "Đường Trần Văn Khánh",
+                                "Đường Bùi Minh Trực"
+                            ]
+                        },
+                        {
+                            "ward": "Phường 2",
+                            "streets": [
+                                "Đường Tùng Thiện Vương",
+                                "Đường Phạm Thế Hiển"
+                            ]
+                        },
+                        {
+                            "ward": "Phường 3",
+                            "streets": [
+                                "Đường Trịnh Đình Trọng",
+                                "Đường Bến Bình Đông"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Quận 9",
+                    "wards": [
+                        {
+                            "ward": "Phường Tăng Nhơn Phú A",
+                            "streets": [
+                                "Đường Trường Lưu",
+                                "Đường Nguyễn Xiển"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Phước Long B",
+                            "streets": [
+                                "Đường Nguyễn Đình Chiểu",
+                                "Đường Đỗ Xuân Hợp"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Long Bình",
+                            "streets": [
+                                "Đường 79",
+                                "Đường 17"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Quận 10",
+                    "wards": [
+                        {
+                            "ward": "Phường 1",
+                            "streets": [
+                                "Đường Lê Hồng Phong",
+                                "Đường Sư Vạn Hạnh"
+                            ]
+                        },
+                        {
+                            "ward": "Phường 2",
+                            "streets": [
+                                "Đường Hòa Bình",
+                                "Đường Nguyễn Tri Phương"
+                            ]
+                        },
+                        {
+                            "ward": "Phường 3",
+                            "streets": [
+                                "Đường Lý Thường Kiệt",
+                                "Đường 3/2"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Quận 11",
+                    "wards": [
+                        {
+                            "ward": "Phường 1",
+                            "streets": [
+                                "Đường Lạc Long Quân",
+                                "Đường Nguyễn Thị Nhỏ"
+                            ]
+                        },
+                        {
+                            "ward": "Phường 2",
+                            "streets": [
+                                "Đường Hồng Bàng",
+                                "Đường Tân Hưng"
+                            ]
+                        },
+                        {
+                            "ward": "Phường 3",
+                            "streets": [
+                                "Đường Hồng Bàng",
+                                "Đường Tháp Mười"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Quận 12",
+                    "wards": [
+                        {
+                            "ward": "Phường Thạnh Lộc",
+                            "streets": [
+                                "Đường Lê Văn Khương",
+                                "Đường Trần Thị Cờ"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Hiệp Thành",
+                            "streets": [
+                                "Đường Nguyễn Văn Quá",
+                                "Đường Nguyễn Thị Nhỏ"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Tân Thới Nhất",
+                            "streets": [
+                                "Đường Tân Thới Nhất",
+                                "Đường Lê Văn Khương"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Thành phố Thủ Đức",
+                    "wards": [
+                        {
+                            "ward": "Phường Hiệp Bình Chánh",
+                            "streets": [
+                                "Đường số 2",
+                                "Đường số 3"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Tam Bình",
+                            "streets": [
+                                "Đường Tam Bình",
+                                "Đường Tam Đảo"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Linh Trung",
+                            "streets": [
+                                "Đường Linh Trung",
+                                "Đường số 9"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+        ,
+        {
+            "province": "Tỉnh Hà Giang",
+            "zipcode": "310000",
+            "districts": [
+                {
+                    "district": "Huyện Hà Giang",
+                    "wards": [
+                        {
+                            "ward": "Xã Phương Thiện",
+                            "streets": [
+                                "Đường Nguyễn Trãi",
+                                "Đường Lê Lợi"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Quang Bình",
+                            "streets": [
+                                "Đường Trần Hưng Đạo",
+                                "Đường Bà Triệu"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Quang Trung",
+                            "streets": [
+                                "Đường Hồ Chí Minh",
+                                "Đường Phạm Hùng"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Đồng Văn",
+                    "wards": [
+                        {
+                            "ward": "Xã Phố Cáo",
+                            "streets": [
+                                "Đường Lý Thường Kiệt",
+                                "Đường Trần Phú"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Lũng Cú",
+                            "streets": [
+                                "Đường Nguyễn Huệ",
+                                "Đường Lê Duẩn"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Sủng Là",
+                            "streets": [
+                                "Đường Nguyễn Ái Quốc",
+                                "Đường Lý Nam Đế"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Mèo Vạc",
+                    "wards": [
+                        {
+                            "ward": "Xã Mèo Vạc",
+                            "streets": [
+                                "Đường Quang Trung",
+                                "Đường Võ Nguyên Giáp"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Pả Vi",
+                            "streets": [
+                                "Đường Lê Thanh Nghị",
+                                "Đường Lê Đại Hành"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Thượng Phùng",
+                            "streets": [
+                                "Đường Lê Lợi",
+                                "Đường Tôn Đức Thắng"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },        
+        {
+            "province": "Tỉnh Cao Bằng",
+            "zipcode": "270000",
+            "districts": [
+                {
+                    "district": "Huyện Cao Bằng",
+                    "wards": [
+                        {
+                            "ward": "Xã Hưng Đạo",
+                            "streets": [
+                                "Đường Trần Hưng Đạo",
+                                "Đường Nguyễn Văn Cừ"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Quang Trung",
+                            "streets": [
+                                "Đường Quang Trung",
+                                "Đường Phan Đình Phùng"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Bảo Lạc",
+                    "wards": [
+                        {
+                            "ward": "Xã Bảo Lạc",
+                            "streets": [
+                                "Đường Lê Hồng Phong",
+                                "Đường Lý Tự Trọng"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Hưng Thịnh",
+                            "streets": [
+                                "Đường Lê Thánh Tông",
+                                "Đường Lê Lợi"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Bảo Lâm",
+                    "wards": [
+                        {
+                            "ward": "Xã Bảo Lâm",
+                            "streets": [
+                                "Đường Bùi Thị Xuân",
+                                "Đường Điện Biên Phủ"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Lý Bôn",
+                            "streets": [
+                                "Đường Ngô Gia Tự",
+                                "Đường Hồ Xuân Hương"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "province": "Tỉnh Bắc Kạn",
+            "zipcode": "960000",
+            "districts": [
+                {
+                    "district": "Huyện Bắc Kạn",
+                    "wards": [
+                        {
+                            "ward": "Xã Xuân Lạc",
+                            "streets": [
+                                "Đường Lý Thường Kiệt",
+                                "Đường Phan Chu Trinh"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Hòa Mục",
+                            "streets": [
+                                "Đường Trần Quốc Toản",
+                                "Đường Nguyễn Thị Minh Khai"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Ba Bể",
+                    "wards": [
+                        {
+                            "ward": "Xã Nam Mẫu",
+                            "streets": [
+                                "Đường Hoàng Văn Thụ",
+                                "Đường Trần Bình Trọng"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Yến Dương",
+                            "streets": [
+                                "Đường Nguyễn Văn Trỗi",
+                                "Đường Lê Văn Tám"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Chợ Đồn",
+                    "wards": [
+                        {
+                            "ward": "Xã Đông Viên",
+                            "streets": [
+                                "Đường Hai Bà Trưng",
+                                "Đường Đinh Tiên Hoàng"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Phương Viên",
+                            "streets": [
+                                "Đường Lê Văn Lương",
+                                "Đường Trường Chinh"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+        ,
+        {
+            "province": "Tỉnh Tuyên Quang",
+            "zipcode": "300000",
+            "districts": [
+                {
+                    "district": "Huyện Tuyên Quang",
+                    "wards": [
+                        {
+                            "ward": "Xã Phú Lợi",
+                            "streets": [
+                                "Đường Hùng Vương",
+                                "Đường Nguyễn Trãi"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Tràng Đà",
+                            "streets": [
+                                "Đường Trần Nhật Duật",
+                                "Đường Tôn Thất Tùng"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Sơn Dương",
+                    "wards": [
+                        {
+                            "ward": "Xã Minh Thanh",
+                            "streets": [
+                                "Đường Lê Quý Đôn",
+                                "Đường Bà Triệu"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Hợp Thành",
+                            "streets": [
+                                "Đường Đào Duy Từ",
+                                "Đường Hoàng Hoa Thám"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Yên Sơn",
+                    "wards": [
+                        {
+                            "ward": "Xã Yên Sơn",
+                            "streets": [
+                                "Đường Nguyễn Du",
+                                "Đường Phạm Ngũ Lão"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Hương Nghịu",
+                            "streets": [
+                                "Đường Trần Hưng Đạo",
+                                "Đường Lý Thái Tổ"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+        ,
+        {
+            "province": "Tỉnh Lào Cai",
+            "zipcode": "330000",
+            "districts": [
+                {
+                    "district": "Huyện Lào Cai",
+                    "wards": [
+                        {
+                            "ward": "Xã Lào Cai",
+                            "streets": [
+                                "Đường Hoàng Liên",
+                                "Đường Nguyễn Huệ"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Cam Đường",
+                            "streets": [
+                                "Đường Trần Hưng Đạo",
+                                "Đường Phan Bội Châu"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Bát Xát",
+                    "wards": [
+                        {
+                            "ward": "Xã Bát Xát",
+                            "streets": [
+                                "Đường Trường Chinh",
+                                "Đường Lê Thánh Tông"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Dền Sáng",
+                            "streets": [
+                                "Đường Hòa Bình",
+                                "Đường Quang Trung"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Sa Pa",
+                    "wards": [
+                        {
+                            "ward": "Xã Sa Pa",
+                            "streets": [
+                                "Đường Fansipan",
+                                "Đường Xuân Viên"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Tả Van",
+                            "streets": [
+                                "Đường Mường Hoa",
+                                "Đường Cầu Mây"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+        ,
+        {
+            "province": "Tỉnh Điện Biên",
+            "zipcode": "380000",
+            "districts": [
+                {
+                    "district": "Huyện Điện Biên",
+                    "wards": [
+                        {
+                            "ward": "Xã Mường Phăng",
+                            "streets": [
+                                "Đường Điện Biên Phủ",
+                                "Đường Võ Nguyên Giáp"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Thanh Nưa",
+                            "streets": [
+                                "Đường Lý Thường Kiệt",
+                                "Đường Nguyễn Văn Cừ"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Mường Nhé",
+                    "wards": [
+                        {
+                            "ward": "Xã Mường Nhé",
+                            "streets": [
+                                "Đường Trần Phú",
+                                "Đường Hoàng Hoa Thám"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Mường Toong",
+                            "streets": [
+                                "Đường Nguyễn Huệ",
+                                "Đường Bùi Thị Xuân"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Mường Lay",
+                    "wards": [
+                        {
+                            "ward": "Xã Mường Lay",
+                            "streets": [
+                                "Đường Hoàng Văn Thụ",
+                                "Đường Lê Lợi"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Nậm La",
+                            "streets": [
+                                "Đường Đinh Tiên Hoàng",
+                                "Đường Phạm Văn Đồng"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+        ,
+        {
+            "province": "Tỉnh Lai Châu",
+            "zipcode": "390000",
+            "districts": [
+                {
+                    "district": "Huyện Lai Châu",
+                    "wards": [
+                        {
+                            "ward": "Xã Tân Phong",
+                            "streets": [
+                                "Đường Lê Lợi",
+                                "Đường Trần Hưng Đạo"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Sùng Phài",
+                            "streets": [
+                                "Đường Nguyễn Trãi",
+                                "Đường Hùng Vương"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Tam Đường",
+                    "wards": [
+                        {
+                            "ward": "Xã Tam Đường",
+                            "streets": [
+                                "Đường Hoàng Hoa Thám",
+                                "Đường Phan Đình Phùng"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Lò Xì",
+                            "streets": [
+                                "Đường Lý Thường Kiệt",
+                                "Đường Bùi Thị Xuân"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Phong Thổ",
+                    "wards": [
+                        {
+                            "ward": "Xã Mù Sang",
+                            "streets": [
+                                "Đường Trần Phú",
+                                "Đường Võ Nguyên Giáp"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Ma Ly Pho",
+                            "streets": [
+                                "Đường Nguyễn Văn Cừ",
+                                "Đường Phạm Văn Đồng"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+        ,
+        {
+            "province": "Tỉnh Sơn La",
+            "zipcode": "360000",
+            "districts": [
+                {
+                    "district": "Huyện Sơn La",
+                    "wards": [
+                        {
+                            "ward": "Xã Chiềng Sinh",
+                            "streets": [
+                                "Đường Hùng Vương",
+                                "Đường Lê Duẩn"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Tà Hộc",
+                            "streets": [
+                                "Đường Trần Quang Khải",
+                                "Đường Phạm Văn Đồng"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Mộc Châu",
+                    "wards": [
+                        {
+                            "ward": "Xã Mộc Châu",
+                            "streets": [
+                                "Đường Đinh Tiên Hoàng",
+                                "Đường Nguyễn Chí Thanh"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Tân Lập",
+                            "streets": [
+                                "Đường Trần Hưng Đạo",
+                                "Đường Lý Thường Kiệt"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Mai Sơn",
+                    "wards": [
+                        {
+                            "ward": "Xã Mai Sơn",
+                            "streets": [
+                                "Đường Hoàng Văn Thụ",
+                                "Đường Nguyễn Trãi"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Tà Mung",
+                            "streets": [
+                                "Đường Nguyễn Huệ",
+                                "Đường Quang Trung"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+        ,
+        {
+            "province": "Tỉnh Yên Bái",
+            "zipcode": "320000",
+            "districts": [
+                {
+                    "district": "Huyện Yên Bái",
+                    "wards": [
+                        {
+                            "ward": "Xã Yên Bình",
+                            "streets": [
+                                "Đường Hùng Vương",
+                                "Đường Trần Phú"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Phúc Lộc",
+                            "streets": [
+                                "Đường Lê Quý Đôn",
+                                "Đường Nguyễn Trãi"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Văn Chấn",
+                    "wards": [
+                        {
+                            "ward": "Xã Văn Chấn",
+                            "streets": [
+                                "Đường Phan Bội Châu",
+                                "Đường Lý Thường Kiệt"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Sơn Thịnh",
+                            "streets": [
+                                "Đường Quang Trung",
+                                "Đường Nguyễn Huệ"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Lục Yên",
+                    "wards": [
+                        {
+                            "ward": "Xã Lục Yên",
+                            "streets": [
+                                "Đường Võ Thị Sáu",
+                                "Đường Lý Nam Đế"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Yên Thắng",
+                            "streets": [
+                                "Đường Hoàng Diệu",
+                                "Đường Trần Hưng Đạo"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+        ,
+        {
+            "province": "Tỉnh Hoà Bình",
+            "zipcode": "350000",
+            "districts": [
+                {
+                    "district": "Huyện Hoà Bình",
+                    "wards": [
+                        {
+                            "ward": "Xã Hòa Bình",
+                            "streets": [
+                                "Đường Trần Phú",
+                                "Đường Lý Thường Kiệt"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Độc Lập",
+                            "streets": [
+                                "Đường Nguyễn Văn Cừ",
+                                "Đường Phan Chu Trinh"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Đà Bắc",
+                    "wards": [
+                        {
+                            "ward": "Xã Đà Bắc",
+                            "streets": [
+                                "Đường Hùng Vương",
+                                "Đường Trần Hưng Đạo"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Hiền Lương",
+                            "streets": [
+                                "Đường Quang Trung",
+                                "Đường Bà Triệu"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Tân Lạc",
+                    "wards": [
+                        {
+                            "ward": "Xã Tân Lạc",
+                            "streets": [
+                                "Đường Lê Lợi",
+                                "Đường Đinh Tiên Hoàng"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Ngọc Mỹ",
+                            "streets": [
+                                "Đường Hoàng Hoa Thám",
+                                "Đường Phạm Văn Đồng"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+        ,
+        {
+            "province": "Tỉnh Thái Nguyên",
+            "zipcode": "240000",
+            "districts": [
+                {
+                    "district": "Huyện Thái Nguyên",
+                    "wards": [
+                        {
+                            "ward": "Xã Phú Lương",
+                            "streets": [
+                                "Đường Nguyễn Trãi",
+                                "Đường Lý Thường Kiệt"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Tân Thịnh",
+                            "streets": [
+                                "Đường Trần Phú",
+                                "Đường Lê Quý Đôn"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Định Hóa",
+                    "wards": [
+                        {
+                            "ward": "Xã Định Hóa",
+                            "streets": [
+                                "Đường Hùng Vương",
+                                "Đường Võ Thị Sáu"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Hợp Thành",
+                            "streets": [
+                                "Đường Nguyễn Huệ",
+                                "Đường Quang Trung"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Phú Bình",
+                    "wards": [
+                        {
+                            "ward": "Xã Phú Bình",
+                            "streets": [
+                                "Đường Hoàng Văn Thụ",
+                                "Đường Lê Lợi"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Tân Khánh",
+                            "streets": [
+                                "Đường Phạm Văn Đồng",
+                                "Đường Trần Hưng Đạo"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+        ,
+        {
+            "province": "Tỉnh Lạng Sơn",
+            "zipcode": "250000",
+            "districts": [
+                {
+                    "district": "Huyện Lạng Sơn",
+                    "wards": [
+                        {
+                            "ward": "Xã Lạng Sơn",
+                            "streets": [
+                                "Đường Hùng Vương",
+                                "Đường Lý Thường Kiệt"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Quảng Chính",
+                            "streets": [
+                                "Đường Nguyễn Trãi",
+                                "Đường Trần Phú"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Tràng Định",
+                    "wards": [
+                        {
+                            "ward": "Xã Tràng Định",
+                            "streets": [
+                                "Đường Lê Lợi",
+                                "Đường Quang Trung"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Đề Thám",
+                            "streets": [
+                                "Đường Phạm Văn Đồng",
+                                "Đường Nguyễn Huệ"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Cao Lộc",
+                    "wards": [
+                        {
+                            "ward": "Xã Cao Lộc",
+                            "streets": [
+                                "Đường Võ Thị Sáu",
+                                "Đường Hoàng Hoa Thám"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Tân Thành",
+                            "streets": [
+                                "Đường Trần Hưng Đạo",
+                                "Đường Phan Chu Trinh"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+        ,
+        {
+            "province": "Tỉnh Quảng Ninh",
+            "zipcode": "200000",
+            "districts": [
+                {
+                    "district": "Thành phố Hạ Long",
+                    "wards": [
+                        {
+                            "ward": "Phường Hồng Gai",
+                            "streets": [
+                                "Đường Bạch Đằng",
+                                "Đường Nguyễn Du"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Bãi Cháy",
+                            "streets": [
+                                "Đường Hậu Cần",
+                                "Đường Hoàng Quốc Việt"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Thành phố Móng Cái",
+                    "wards": [
+                        {
+                            "ward": "Phường Ka Long",
+                            "streets": [
+                                "Đường Trần Phú",
+                                "Đường Hoàng Sa"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Trần Phú",
+                            "streets": [
+                                "Đường Lê Quý Đôn",
+                                "Đường Lý Thường Kiệt"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Cẩm Phả",
+                    "wards": [
+                        {
+                            "ward": "Xã Cẩm Phả",
+                            "streets": [
+                                "Đường Trần Hưng Đạo",
+                                "Đường Đinh Tiên Hoàng"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Cẩm Thịnh",
+                            "streets": [
+                                "Đường Lê Lợi",
+                                "Đường Nguyễn Trãi"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+        ,
+        {
+            "province": "Tỉnh Bắc Giang",
+            "zipcode": "230000",
+            "districts": [
+                {
+                    "district": "Huyện Bắc Giang",
+                    "wards": [
+                        {
+                            "ward": "Xã Dĩnh Trì",
+                            "streets": [
+                                "Đường Trần Hưng Đạo",
+                                "Đường Nguyễn Trãi"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Tân Hưng",
+                            "streets": [
+                                "Đường Lê Lợi",
+                                "Đường Phạm Văn Đồng"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Lục Ngạn",
+                    "wards": [
+                        {
+                            "ward": "Xã Lục Ngạn",
+                            "streets": [
+                                "Đường Quang Trung",
+                                "Đường Võ Thị Sáu"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Hồng Giang",
+                            "streets": [
+                                "Đường Nguyễn Huệ",
+                                "Đường Lê Quý Đôn"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Yên Thế",
+                    "wards": [
+                        {
+                            "ward": "Xã Yên Thế",
+                            "streets": [
+                                "Đường Hùng Vương",
+                                "Đường Bùi Thị Xuân"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Đồng Hưu",
+                            "streets": [
+                                "Đường Lý Thái Tổ",
+                                "Đường Hoàng Hoa Thám"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+        ,
+        {
+            "province": "Tỉnh Phú Thọ",
+            "zipcode": "290000",
+            "districts": [
+                {
+                    "district": "Huyện Việt Trì",
+                    "wards": [
+                        {
+                            "ward": "Phường Bến Gót",
+                            "streets": [
+                                "Đường Trần Hưng Đạo",
+                                "Đường Nguyễn Du"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Dữu Lâu",
+                            "streets": [
+                                "Đường Lê Lợi",
+                                "Đường Hùng Vương"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Đoan Hùng",
+                    "wards": [
+                        {
+                            "ward": "Xã Đoan Hùng",
+                            "streets": [
+                                "Đường Quang Trung",
+                                "Đường Lê Quý Đôn"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Vân Du",
+                            "streets": [
+                                "Đường Trần Phú",
+                                "Đường Phan Chu Trinh"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Thanh Ba",
+                    "wards": [
+                        {
+                            "ward": "Xã Thanh Ba",
+                            "streets": [
+                                "Đường Lý Thái Tổ",
+                                "Đường Phạm Văn Đồng"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Chí Tiên",
+                            "streets": [
+                                "Đường Nguyễn Trãi",
+                                "Đường Hoàng Hoa Thám"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+        ,
+        {
+            "province": "Tỉnh Vĩnh Phúc",
+            "zipcode": "280000",
+            "districts": [
+                {
+                    "district": "Huyện Vĩnh Yên",
+                    "wards": [
+                        {
+                            "ward": "Phường Liên Bảo",
+                            "streets": [
+                                "Đường Trần Hưng Đạo",
+                                "Đường Nguyễn Huệ"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Đống Đa",
+                            "streets": [
+                                "Đường Lê Lợi",
+                                "Đường Quang Trung"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Lập Thạch",
+                    "wards": [
+                        {
+                            "ward": "Xã Lập Thạch",
+                            "streets": [
+                                "Đường Trần Phú",
+                                "Đường Hùng Vương"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Xuân Hòa",
+                            "streets": [
+                                "Đường Lý Thường Kiệt",
+                                "Đường Phan Chu Trinh"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Tam Dương",
+                    "wards": [
+                        {
+                            "ward": "Xã Tam Dương",
+                            "streets": [
+                                "Đường Lê Quý Đôn",
+                                "Đường Võ Thị Sáu"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Hoàng Đan",
+                            "streets": [
+                                "Đường Nguyễn Trãi",
+                                "Đường Hoàng Hoa Thám"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+        ,
+        {
+            "province": "Tỉnh Bắc Ninh",
+            "zipcode": "160000",
+            "districts": [
+                {
+                    "district": "Thành phố Bắc Ninh",
+                    "wards": [
+                        {
+                            "ward": "Phường Đại Phúc",
+                            "streets": [
+                                "Đường Lý Thường Kiệt",
+                                "Đường Nguyễn Gia Thiều"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Suối Hoa",
+                            "streets": [
+                                "Đường Hoàng Quốc Việt",
+                                "Đường Trần Hưng Đạo"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Tiên Du",
+                    "wards": [
+                        {
+                            "ward": "Xã Tiên Du",
+                            "streets": [
+                                "Đường Lê Quý Đôn",
+                                "Đường Phan Bội Châu"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Đình Bảng",
+                            "streets": [
+                                "Đường Lý Đạo Thành",
+                                "Đường Võ Cường"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Yên Phong",
+                    "wards": [
+                        {
+                            "ward": "Xã Yên Phong",
+                            "streets": [
+                                "Đường Nguyễn Trãi",
+                                "Đường Phạm Văn Đồng"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Đông Phong",
+                            "streets": [
+                                "Đường Nguyễn Huệ",
+                                "Đường Quang Trung"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+        ,
+        {
+            "province": "Tỉnh Hải Dương",
+            "zipcode": "170000",
+            "districts": [
+                {
+                    "district": "Thành phố Hải Dương",
+                    "wards": [
+                        {
+                            "ward": "Phường Nhân Huệ",
+                            "streets": [
+                                "Đường Hùng Vương",
+                                "Đường Trần Hưng Đạo"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Lê Thanh Nghị",
+                            "streets": [
+                                "Đường Nguyễn Trãi",
+                                "Đường Phạm Văn Đồng"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Thanh Hà",
+                    "wards": [
+                        {
+                            "ward": "Xã Thanh Hà",
+                            "streets": [
+                                "Đường Quang Trung",
+                                "Đường Trần Phú"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Tân An",
+                            "streets": [
+                                "Đường Lê Lợi",
+                                "Đường Bà Triệu"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Cẩm Giàng",
+                    "wards": [
+                        {
+                            "ward": "Xã Cẩm Giàng",
+                            "streets": [
+                                "Đường Hoàng Hoa Thám",
+                                "Đường Nguyễn Huệ"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Cẩm Thượng",
+                            "streets": [
+                                "Đường Phan Đình Phùng",
+                                "Đường Lý Thường Kiệt"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+        ,
+        {
+            "province": "Thành phố Hải Phòng",
+            "zipcode": "180000",
+            "districts": [
+                {
+                    "district": "Quận Hồng Bàng",
+                    "wards": [
+                        {
+                            "ward": "Phường Hạ Lý",
+                            "streets": [
+                                "Đường Bạch Đằng",
+                                "Đường Trần Hưng Đạo"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Minh Khai",
+                            "streets": [
+                                "Đường Hoàng Diệu",
+                                "Đường Phan Bội Châu"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Quận Lê Chân",
+                    "wards": [
+                        {
+                            "ward": "Phường An Dương",
+                            "streets": [
+                                "Đường Nguyễn Văn Linh",
+                                "Đường Trần Nguyên Hãn"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Dư Hàng Kênh",
+                            "streets": [
+                                "Đường Lạch Tray",
+                                "Đường Hùng Vương"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Quận Ngô Quyền",
+                    "wards": [
+                        {
+                            "ward": "Phường Đằng Giang",
+                            "streets": [
+                                "Đường Đà Nẵng",
+                                "Đường Lý Thường Kiệt"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Lạch Tray",
+                            "streets": [
+                                "Đường Nguyễn Bỉnh Khiêm",
+                                "Đường Đông Khê"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "province": "Tỉnh Hưng Yên",
+            "zipcode": "190000",
+            "districts": [
+                {
+                    "district": "Thành phố Hưng Yên",
+                    "wards": [
+                        {
+                            "ward": "Phường An Tảo",
+                            "streets": [
+                                "Đường Lý Thái Tổ",
+                                "Đường Quang Trung"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Hiến Nam",
+                            "streets": [
+                                "Đường Hùng Vương",
+                                "Đường Phạm Ngũ Lão"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Văn Lâm",
+                    "wards": [
+                        {
+                            "ward": "Xã Lương Tài",
+                            "streets": [
+                                "Đường Nguyễn Trãi",
+                                "Đường Hoàng Hoa Thám"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Nhân Hòa",
+                            "streets": [
+                                "Đường Trần Hưng Đạo",
+                                "Đường Phan Đình Phùng"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Mỹ Hào",
+                    "wards": [
+                        {
+                            "ward": "Xã Lê Lợi",
+                            "streets": [
+                                "Đường Nguyễn Văn Cừ",
+                                "Đường Bùi Thị Xuân"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Nhân Nghĩa",
+                            "streets": [
+                                "Đường Hai Bà Trưng",
+                                "Đường Võ Thị Sáu"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "province": "Tỉnh Thái Bình",
+            "zipcode": "410000",
+            "districts": [
+                {
+                    "district": "Thành phố Thái Bình",
+                    "wards": [
+                        {
+                            "ward": "Phường Trần Lãm",
+                            "streets": [
+                                "Đường Lý Bôn",
+                                "Đường Trần Hưng Đạo"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Lê Hồng Phong",
+                            "streets": [
+                                "Đường Nguyễn Thị Minh Khai",
+                                "Đường Trần Phú"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Hưng Hà",
+                    "wards": [
+                        {
+                            "ward": "Xã Hưng Hà",
+                            "streets": [
+                                "Đường Lê Lợi",
+                                "Đường Phạm Văn Đồng"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Thái Hòa",
+                            "streets": [
+                                "Đường Quang Trung",
+                                "Đường Lý Thường Kiệt"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Quỳnh Phụ",
+                    "wards": [
+                        {
+                            "ward": "Xã Quỳnh Hưng",
+                            "streets": [
+                                "Đường Nguyễn Huệ",
+                                "Đường Phan Chu Trinh"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Quỳnh Thọ",
+                            "streets": [
+                                "Đường Võ Nguyên Giáp",
+                                "Đường Lý Nam Đế"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "province": "Tỉnh Hà Nam",
+            "zipcode": "400000",
+            "districts": [
+                {
+                    "district": "Thành phố Phủ Lý",
+                    "wards": [
+                        {
+                            "ward": "Phường Lương Khánh Thiện",
+                            "streets": [
+                                "Đường Lê Lợi",
+                                "Đường Trần Phú"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Minh Khai",
+                            "streets": [
+                                "Đường Nguyễn Văn Cừ",
+                                "Đường Hoàng Hoa Thám"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Bình Lục",
+                    "wards": [
+                        {
+                            "ward": "Xã Bình Nghĩa",
+                            "streets": [
+                                "Đường Lý Thái Tổ",
+                                "Đường Phạm Hùng"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Bình Yên",
+                            "streets": [
+                                "Đường Quang Trung",
+                                "Đường Nguyễn Huệ"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Duy Tiên",
+                    "wards": [
+                        {
+                            "ward": "Xã Duy Minh",
+                            "streets": [
+                                "Đường Trần Hưng Đạo",
+                                "Đường Trần Phú"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Duy Tiên",
+                            "streets": [
+                                "Đường Nguyễn Trãi",
+                                "Đường Lê Quý Đôn"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "province": "Tỉnh Nam Định",
+            "zipcode": "420000",
+            "districts": [
+                {
+                    "district": "Thành phố Nam Định",
+                    "wards": [
+                        {
+                            "ward": "Phường Lộc Vượng",
+                            "streets": [
+                                "Đường Trần Hưng Đạo",
+                                "Đường Phan Đình Phùng"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Cửa Bắc",
+                            "streets": [
+                                "Đường Lê Hồng Phong",
+                                "Đường Võ Thị Sáu"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Trực Ninh",
+                    "wards": [
+                        {
+                            "ward": "Xã Trực Đạo",
+                            "streets": [
+                                "Đường Nguyễn Văn Trỗi",
+                                "Đường Quang Trung"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Trực Hưng",
+                            "streets": [
+                                "Đường Trần Phú",
+                                "Đường Lý Thường Kiệt"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Xuân Trường",
+                    "wards": [
+                        {
+                            "ward": "Xã Xuân Thủy",
+                            "streets": [
+                                "Đường Nguyễn Huệ",
+                                "Đường Lê Quý Đôn"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Xuân Bắc",
+                            "streets": [
+                                "Đường Phạm Văn Đồng",
+                                "Đường Hoàng Quốc Việt"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+        ,
+        {
+            "province": "Tỉnh Ninh Bình",
+            "zipcode": "430000",
+            "districts": [
+                {
+                    "district": "Thành phố Ninh Bình",
+                    "wards": [
+                        {
+                            "ward": "Phường Bích Đào",
+                            "streets": [
+                                "Đường Trần Hưng Đạo",
+                                "Đường Nguyễn Huệ"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Thanh Bình",
+                            "streets": [
+                                "Đường Lý Thường Kiệt",
+                                "Đường Phạm Văn Đồng"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Tam Điệp",
+                    "wards": [
+                        {
+                            "ward": "Xã Tam Điệp",
+                            "streets": [
+                                "Đường Trần Phú",
+                                "Đường Hùng Vương"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Yên Thắng",
+                            "streets": [
+                                "Đường Quang Trung",
+                                "Đường Phan Chu Trinh"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Nho Quan",
+                    "wards": [
+                        {
+                            "ward": "Xã Nho Quan",
+                            "streets": [
+                                "Đường Võ Thị Sáu",
+                                "Đường Nguyễn Trãi"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Gia Tường",
+                            "streets": [
+                                "Đường Phạm Hùng",
+                                "Đường Lê Lợi"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "province": "Tỉnh Thanh Hóa",
+            "zipcode": "440000",
+            "districts": [
+                {
+                    "district": "Thành phố Thanh Hóa",
+                    "wards": [
+                        {
+                            "ward": "Phường Ba Đình",
+                            "streets": [
+                                "Đường Nguyễn Trãi",
+                                "Đường Lê Hồng Phong"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Đông Thọ",
+                            "streets": [
+                                "Đường Lê Quý Đôn",
+                                "Đường Trần Phú"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Thạch Thành",
+                    "wards": [
+                        {
+                            "ward": "Xã Thạch Thành",
+                            "streets": [
+                                "Đường Quang Trung",
+                                "Đường Nguyễn Huệ"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Thạch Quảng",
+                            "streets": [
+                                "Đường Phan Đình Phùng",
+                                "Đường Võ Thị Sáu"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Mường Lát",
+                    "wards": [
+                        {
+                            "ward": "Xã Mường Lát",
+                            "streets": [
+                                "Đường Phạm Văn Đồng",
+                                "Đường Trần Hưng Đạo"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Tam Chung",
+                            "streets": [
+                                "Đường Lê Lợi",
+                                "Đường Nguyễn Văn Cừ"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "province": "Tỉnh Nghệ An",
+            "zipcode": "460000",
+            "districts": [
+                {
+                    "district": "Thành phố Vinh",
+                    "wards": [
+                        {
+                            "ward": "Phường Hưng Dũng",
+                            "streets": [
+                                "Đường Nguyễn Du",
+                                "Đường Quang Trung"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Bến Thủy",
+                            "streets": [
+                                "Đường Hùng Vương",
+                                "Đường Lý Thường Kiệt"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Nghĩa Đàn",
+                    "wards": [
+                        {
+                            "ward": "Xã Nghĩa Đồng",
+                            "streets": [
+                                "Đường Trần Phú",
+                                "Đường Nguyễn Trãi"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Nghĩa Sơn",
+                            "streets": [
+                                "Đường Hoàng Quốc Việt",
+                                "Đường Phan Chu Trinh"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Thanh Chương",
+                    "wards": [
+                        {
+                            "ward": "Xã Thanh Chi",
+                            "streets": [
+                                "Đường Võ Nguyên Giáp",
+                                "Đường Nguyễn Huệ"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Thanh Thịnh",
+                            "streets": [
+                                "Đường Phạm Văn Đồng",
+                                "Đường Lê Quý Đôn"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "province": "Tỉnh Hà Tĩnh",
+            "zipcode": "480000",
+            "districts": [
+                {
+                    "district": "Thành phố Hà Tĩnh",
+                    "wards": [
+                        {
+                            "ward": "Phường Trần Phú",
+                            "streets": [
+                                "Đường Nguyễn Công Trứ",
+                                "Đường Lê Hồng Phong"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Nam Hà",
+                            "streets": [
+                                "Đường Hà Huy Tập",
+                                "Đường Trần Phú"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Hương Khê",
+                    "wards": [
+                        {
+                            "ward": "Xã Hương Khê",
+                            "streets": [
+                                "Đường Lê Duẩn",
+                                "Đường Phan Đình Phùng"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Hương Thủy",
+                            "streets": [
+                                "Đường Nguyễn Thị Minh Khai",
+                                "Đường Lê Quý Đôn"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Vũ Quang",
+                    "wards": [
+                        {
+                            "ward": "Xã Vũ Quang",
+                            "streets": [
+                                "Đường Quang Trung",
+                                "Đường Trần Hưng Đạo"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Đức Bồng",
+                            "streets": [
+                                "Đường Lê Lợi",
+                                "Đường Phạm Văn Đồng"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "province": "Tỉnh Quảng Bình",
+            "zipcode": "510000",
+            "districts": [
+                {
+                    "district": "Thành phố Đồng Hới",
+                    "wards": [
+                        {
+                            "ward": "Phường Hải Thành",
+                            "streets": [
+                                "Đường Nguyễn Văn Linh",
+                                "Đường Lê Quý Đôn"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Đồng Phú",
+                            "streets": [
+                                "Đường Võ Thị Sáu",
+                                "Đường Trần Hưng Đạo"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Quảng Trạch",
+                    "wards": [
+                        {
+                            "ward": "Xã Quảng Trạch",
+                            "streets": [
+                                "Đường Nguyễn Trãi",
+                                "Đường Phan Chu Trinh"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Cảnh Hóa",
+                            "streets": [
+                                "Đường Lê Lợi",
+                                "Đường Lý Thường Kiệt"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Bố Trạch",
+                    "wards": [
+                        {
+                            "ward": "Xã Bố Trạch",
+                            "streets": [
+                                "Đường Trần Phú",
+                                "Đường Hùng Vương"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Hoà Trạch",
+                            "streets": [
+                                "Đường Nguyễn Văn Cừ",
+                                "Đường Lê Hồng Phong"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "province": "Tỉnh Quảng Trị",
+            "zipcode": "520000",
+            "districts": [
+                {
+                    "district": "Thành phố Đông Hà",
+                    "wards": [
+                        {
+                            "ward": "Phường 1",
+                            "streets": [
+                                "Đường Nguyễn Huệ",
+                                "Đường Lê Quý Đôn"
+                            ]
+                        },
+                        {
+                            "ward": "Phường 2",
+                            "streets": [
+                                "Đường Trần Phú",
+                                "Đường Phạm Văn Đồng"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Triệu Phong",
+                    "wards": [
+                        {
+                            "ward": "Xã Triệu Phong",
+                            "streets": [
+                                "Đường Quang Trung",
+                                "Đường Nguyễn Trãi"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Gio Linh",
+                            "streets": [
+                                "Đường Lê Lợi",
+                                "Đường Nguyễn Văn Cừ"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Cam Lộ",
+                    "wards": [
+                        {
+                            "ward": "Xã Cam Lộ",
+                            "streets": [
+                                "Đường Trần Hưng Đạo",
+                                "Đường Lý Thường Kiệt"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Thanh An",
+                            "streets": [
+                                "Đường Nguyễn Văn Linh",
+                                "Đường Hoàng Hoa Thám"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "province": "Tỉnh Thừa Thiên Huế",
+            "zipcode": "530000",
+            "districts": [
+                {
+                    "district": "Thành phố Huế",
+                    "wards": [
+                        {
+                            "ward": "Phường Phú Hậu",
+                            "streets": [
+                                "Đường Phan Đình Phùng",
+                                "Đường Nguyễn Huệ"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Phú Nhuận",
+                            "streets": [
+                                "Đường Lê Lợi",
+                                "Đường Hùng Vương"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Phú Vang",
+                    "wards": [
+                        {
+                            "ward": "Xã Phú Vang",
+                            "streets": [
+                                "Đường Võ Nguyên Giáp",
+                                "Đường Nguyễn Trãi"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Vinh Mỹ",
+                            "streets": [
+                                "Đường Lê Văn Tám",
+                                "Đường Quang Trung"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện A Lưới",
+                    "wards": [
+                        {
+                            "ward": "Xã A Ngo",
+                            "streets": [
+                                "Đường Hoàng Diệu",
+                                "Đường Phạm Văn Đồng"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Hồng Trung",
+                            "streets": [
+                                "Đường Võ Thị Sáu",
+                                "Đường Trần Phú"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+        ,
+        {
+            "province": "Thành phố Đà Nẵng",
+            "zipcode": "550000",
+            "districts": [
+                {
+                    "district": "Quận Hải Châu",
+                    "wards": [
+                        {
+                            "ward": "Phường Bình Hiên",
+                            "streets": [
+                                "Đường Lê Lợi",
+                                "Đường Trần Phú"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Thạch Thang",
+                            "streets": [
+                                "Đường Nguyễn Văn Linh",
+                                "Đường Lê Duẩn"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Quận Sơn Trà",
+                    "wards": [
+                        {
+                            "ward": "Phường An Hải Bắc",
+                            "streets": [
+                                "Đường Võ Nguyên Giáp",
+                                "Đường Phạm Văn Đồng"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Mân Thái",
+                            "streets": [
+                                "Đường Hoàng Sa",
+                                "Đường Lê Văn Hiến"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Quận Ngũ Hành Sơn",
+                    "wards": [
+                        {
+                            "ward": "Phường Hòa Hải",
+                            "streets": [
+                                "Đường Trần Hưng Đạo",
+                                "Đường Ngô Quyền"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Khuê Mỹ",
+                            "streets": [
+                                "Đường Lê Văn Hiến",
+                                "Đường Võ Chí Công"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "province": "Tỉnh Quảng Nam",
+            "zipcode": "560000",
+            "districts": [
+                {
+                    "district": "Thành phố Tam Kỳ",
+                    "wards": [
+                        {
+                            "ward": "Phường An Mỹ",
+                            "streets": [
+                                "Đường Trần Phú",
+                                "Đường Hùng Vương"
+                            ]
+                        },
+                        {
+                            "ward": "Phường An Sơn",
+                            "streets": [
+                                "Đường Phan Châu Trinh",
+                                "Đường Nguyễn Văn Trỗi"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Núi Thành",
+                    "wards": [
+                        {
+                            "ward": "Xã Tam Anh Bắc",
+                            "streets": [
+                                "Đường Trần Đại Nghĩa",
+                                "Đường Lê Lợi"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Tam Anh Nam",
+                            "streets": [
+                                "Đường Quang Trung",
+                                "Đường Võ Thị Sáu"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Phước Sơn",
+                    "wards": [
+                        {
+                            "ward": "Xã Phước Mỹ",
+                            "streets": [
+                                "Đường Nguyễn Du",
+                                "Đường Nguyễn Trãi"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Phước Thành",
+                            "streets": [
+                                "Đường Phạm Văn Đồng",
+                                "Đường Trần Hưng Đạo"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "province": "Tỉnh Quảng Ngãi",
+            "zipcode": "570000",
+            "districts": [
+                {
+                    "district": "Thành phố Quảng Ngãi",
+                    "wards": [
+                        {
+                            "ward": "Phường Trần Hưng Đạo",
+                            "streets": [
+                                "Đường Nguyễn Huệ",
+                                "Đường Quang Trung"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Lê Hồng Phong",
+                            "streets": [
+                                "Đường Trần Phú",
+                                "Đường Lê Lợi"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Tư Nghĩa",
+                    "wards": [
+                        {
+                            "ward": "Xã Tư Nghĩa",
+                            "streets": [
+                                "Đường Võ Nguyên Giáp",
+                                "Đường Lý Thường Kiệt"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Nghĩa Dõng",
+                            "streets": [
+                                "Đường Phan Bội Châu",
+                                "Đường Nguyễn Văn Linh"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Sơn Tịnh",
+                    "wards": [
+                        {
+                            "ward": "Xã Sơn Tịnh",
+                            "streets": [
+                                "Đường Nguyễn Chí Thanh",
+                                "Đường Trường Chinh"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Tịnh Thọ",
+                            "streets": [
+                                "Đường Trần Phú",
+                                "Đường Hoàng Hoa Thám"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+        ,
+        {
+            "province": "Tỉnh Bình Định",
+            "zipcode": "590000",
+            "districts": [
+                {
+                    "district": "Thành phố Quy Nhơn",
+                    "wards": [
+                        {
+                            "ward": "Phường Lê Lợi",
+                            "streets": [
+                                "Đường Hùng Vương",
+                                "Đường Nguyễn Tất Thành"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Trần Phú",
+                            "streets": [
+                                "Đường Trần Hưng Đạo",
+                                "Đường Lý Thái Tổ"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Tuy Phước",
+                    "wards": [
+                        {
+                            "ward": "Xã Phước An",
+                            "streets": [
+                                "Đường Quang Trung",
+                                "Đường Nguyễn Văn Cừ"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Phước Thuận",
+                            "streets": [
+                                "Đường Trần Phú",
+                                "Đường Võ Thị Sáu"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "province": "Tỉnh Phú Yên",
+            "zipcode": "620000",
+            "districts": [
+                {
+                    "district": "Thành phố Tuy Hòa",
+                    "wards": [
+                        {
+                            "ward": "Phường Phú Đông",
+                            "streets": [
+                                "Đường Lê Lợi",
+                                "Đường Nguyễn Huệ"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Phú Thạnh",
+                            "streets": [
+                                "Đường Trần Hưng Đạo",
+                                "Đường Quang Trung"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Sông Cầu",
+                    "wards": [
+                        {
+                            "ward": "Xã Xuân Lộc",
+                            "streets": [
+                                "Đường Nguyễn Văn Trỗi",
+                                "Đường Lê Quý Đôn"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Xuân Phú",
+                            "streets": [
+                                "Đường Trần Phú",
+                                "Đường Nguyễn Trãi"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "province": "Tỉnh Khánh Hòa",
+            "zipcode": "650000",
+            "districts": [
+                {
+                    "district": "Thành phố Nha Trang",
+                    "wards": [
+                        {
+                            "ward": "Phường Phước Hải",
+                            "streets": [
+                                "Đường Nguyễn Tất Thành",
+                                "Đường Hùng Vương"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Vĩnh Hòa",
+                            "streets": [
+                                "Đường Trần Phú",
+                                "Đường Lê Quý Đôn"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Cam Lâm",
+                    "wards": [
+                        {
+                            "ward": "Xã Cam Hòa",
+                            "streets": [
+                                "Đường Lê Lợi",
+                                "Đường Võ Nguyên Giáp"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Cam Thành Bắc",
+                            "streets": [
+                                "Đường Nguyễn Huệ",
+                                "Đường Phan Bội Châu"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "province": "Tỉnh Ninh Thuận",
+            "zipcode": "660000",
+            "districts": [
+                {
+                    "district": "Thành phố Phan Rang-Tháp Chàm",
+                    "wards": [
+                        {
+                            "ward": "Phường Đô Vinh",
+                            "streets": [
+                                "Đường Thống Nhất",
+                                "Đường Trần Hưng Đạo"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Phước Mỹ",
+                            "streets": [
+                                "Đường Lê Lợi",
+                                "Đường Quang Trung"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Ninh Hải",
+                    "wards": [
+                        {
+                            "ward": "Xã Hộ Hải",
+                            "streets": [
+                                "Đường Võ Thị Sáu",
+                                "Đường Nguyễn Trãi"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Phương Hải",
+                            "streets": [
+                                "Đường Trần Phú",
+                                "Đường Nguyễn Văn Cừ"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "province": "Tỉnh Bình Thuận",
+            "zipcode": "770000",
+            "districts": [
+                {
+                    "district": "Thành phố Phan Thiết",
+                    "wards": [
+                        {
+                            "ward": "Phường Phú Trinh",
+                            "streets": [
+                                "Đường Hùng Vương",
+                                "Đường Nguyễn Văn Cừ"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Đức Nghĩa",
+                            "streets": [
+                                "Đường Trần Hưng Đạo",
+                                "Đường Lê Quý Đôn"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Bắc Bình",
+                    "wards": [
+                        {
+                            "ward": "Xã Phan Rí Thành",
+                            "streets": [
+                                "Đường Quang Trung",
+                                "Đường Nguyễn Huệ"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Bình An",
+                            "streets": [
+                                "Đường Trần Phú",
+                                "Đường Phạm Văn Đồng"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "province": "Tỉnh Kon Tum",
+            "zipcode": "600000",
+            "districts": [
+                {
+                    "district": "Thành phố Kon Tum",
+                    "wards": [
+                        {
+                            "ward": "Phường Thống Nhất",
+                            "streets": [
+                                "Đường Nguyễn Văn Linh",
+                                "Đường Trần Phú"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Duy Tân",
+                            "streets": [
+                                "Đường Phan Đình Phùng",
+                                "Đường Nguyễn Huệ"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Ngọc Hồi",
+                    "wards": [
+                        {
+                            "ward": "Xã Đắk Xú",
+                            "streets": [
+                                "Đường Trần Hưng Đạo",
+                                "Đường Nguyễn Thị Minh Khai"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Đắk Kan",
+                            "streets": [
+                                "Đường Võ Thị Sáu",
+                                "Đường Quang Trung"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "province": "Tỉnh Gia Lai",
+            "zipcode": "610000",
+            "districts": [
+                {
+                    "district": "Thành phố Pleiku",
+                    "wards": [
+                        {
+                            "ward": "Phường Diên Hồng",
+                            "streets": [
+                                "Đường Lý Thường Kiệt",
+                                "Đường Nguyễn Trãi"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Hội Phú",
+                            "streets": [
+                                "Đường Phan Bội Châu",
+                                "Đường Quang Trung"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Chư Sê",
+                    "wards": [
+                        {
+                            "ward": "Xã Ia Blang",
+                            "streets": [
+                                "Đường Lê Lợi",
+                                "Đường Trần Phú"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Ia Pal",
+                            "streets": [
+                                "Đường Nguyễn Văn Linh",
+                                "Đường Hùng Vương"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "province": "Tỉnh Đắk Lắk",
+            "zipcode": "630000",
+            "districts": [
+                {
+                    "district": "Thành phố Buôn Ma Thuột",
+                    "wards": [
+                        {
+                            "ward": "Phường Tân Lợi",
+                            "streets": [
+                                "Đường Nguyễn Văn Cừ",
+                                "Đường Trần Phú"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Thắng Lợi",
+                            "streets": [
+                                "Đường Nguyễn Huệ",
+                                "Đường Hùng Vương"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Ea Kar",
+                    "wards": [
+                        {
+                            "ward": "Xã Ea Đar",
+                            "streets": [
+                                "Đường Lê Quý Đôn",
+                                "Đường Trần Hưng Đạo"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Ea Păl",
+                            "streets": [
+                                "Đường Phan Đình Phùng",
+                                "Đường Nguyễn Trãi"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "province": "Tỉnh Đắk Nông",
+            "zipcode": "640000",
+            "districts": [
+                {
+                    "district": "Thành phố Gia Nghĩa",
+                    "wards": [
+                        {
+                            "ward": "Phường Nghĩa Đức",
+                            "streets": [
+                                "Đường Lý Thường Kiệt",
+                                "Đường Nguyễn Huệ"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Nghĩa Tân",
+                            "streets": [
+                                "Đường Trần Phú",
+                                "Đường Quang Trung"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Đắk Glong",
+                    "wards": [
+                        {
+                            "ward": "Xã Quảng Khê",
+                            "streets": [
+                                "Đường Phan Chu Trinh",
+                                "Đường Lê Lợi"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Đắk Ha",
+                            "streets": [
+                                "Đường Trần Hưng Đạo",
+                                "Đường Nguyễn Văn Cừ"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "province": "Tỉnh Lâm Đồng",
+            "zipcode": "670000",
+            "districts": [
+                {
+                    "district": "Thành phố Đà Lạt",
+                    "wards": [
+                        {
+                            "ward": "Phường 1",
+                            "streets": [
+                                "Đường Lê Thị Hồng Gấm",
+                                "Đường Trần Quốc Toản"
+                            ]
+                        },
+                        {
+                            "ward": "Phường 2",
+                            "streets": [
+                                "Đường Nguyễn Công Trứ",
+                                "Đường Bùi Thị Xuân"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Lạc Dương",
+                    "wards": [
+                        {
+                            "ward": "Xã Đạ Sar",
+                            "streets": [
+                                "Đường Võ Thị Sáu",
+                                "Đường Phan Bội Châu"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Đạ Nhim",
+                            "streets": [
+                                "Đường Trần Phú",
+                                "Đường Nguyễn Văn Linh"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+        ,
+        {
+            "province": "Tỉnh Bình Phước",
+            "zipcode": "830000",
+            "districts": [
+                {
+                    "district": "Thành phố Đồng Xoài",
+                    "wards": [
+                        {
+                            "ward": "Phường Tân Bình",
+                            "streets": [
+                                "Đường Lê Duẩn",
+                                "Đường Hùng Vương"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Tân Xuân",
+                            "streets": [
+                                "Đường Nguyễn Thị Minh Khai",
+                                "Đường Trần Hưng Đạo"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Chơn Thành",
+                    "wards": [
+                        {
+                            "ward": "Xã Chơn Thành",
+                            "streets": [
+                                "Đường Quang Trung",
+                                "Đường Phan Đình Phùng"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Minh Thành",
+                            "streets": [
+                                "Đường Nguyễn Huệ",
+                                "Đường Lê Lợi"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "province": "Tỉnh Tây Ninh",
+            "zipcode": "840000",
+            "districts": [
+                {
+                    "district": "Thành phố Tây Ninh",
+                    "wards": [
+                        {
+                            "ward": "Phường 1",
+                            "streets": [
+                                "Đường Trần Hưng Đạo",
+                                "Đường Lê Lợi"
+                            ]
+                        },
+                        {
+                            "ward": "Phường 2",
+                            "streets": [
+                                "Đường Nguyễn Thái Học",
+                                "Đường Độc Lập"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Tân Biên",
+                    "wards": [
+                        {
+                            "ward": "Xã Tân Biên",
+                            "streets": [
+                                "Đường Nguyễn Huệ",
+                                "Đường Trần Quốc Toản"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Tân Thanh",
+                            "streets": [
+                                "Đường Phan Đình Phùng",
+                                "Đường Hùng Vương"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "province": "Tỉnh Bình Dương",
+            "zipcode": "820000",
+            "districts": [
+                {
+                    "district": "Thành phố Thủ Dầu Một",
+                    "wards": [
+                        {
+                            "ward": "Phường Phú Hòa",
+                            "streets": [
+                                "Đường Nguyễn Văn Linh",
+                                "Đường Hùng Vương"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Hiệp Thành",
+                            "streets": [
+                                "Đường Trần Phú",
+                                "Đường Nguyễn Thị Minh Khai"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Bến Cát",
+                    "wards": [
+                        {
+                            "ward": "Xã Bến Cát",
+                            "streets": [
+                                "Đường Lê Lợi",
+                                "Đường Quang Trung"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Mỹ Phước",
+                            "streets": [
+                                "Đường Trần Quốc Toản",
+                                "Đường Nguyễn Trãi"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "province": "Tỉnh Đồng Nai",
+            "zipcode": "810000",
+            "districts": [
+                {
+                    "district": "Thành phố Biên Hòa",
+                    "wards": [
+                        {
+                            "ward": "Phường An Bình",
+                            "streets": [
+                                "Đường Nguyễn Ái Quốc",
+                                "Đường Hùng Vương"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Quang Vinh",
+                            "streets": [
+                                "Đường Trần Quốc Toản",
+                                "Đường Lê Thánh Tôn"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Nhơn Trạch",
+                    "wards": [
+                        {
+                            "ward": "Xã Phú Hội",
+                            "streets": [
+                                "Đường Lê Hồng Phong",
+                                "Đường Trần Văn Trà"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Vĩnh Thanh",
+                            "streets": [
+                                "Đường Nguyễn Văn Cừ",
+                                "Đường Độc Lập"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "province": "Tỉnh Bà Rịa - Vũng Tàu",
+            "zipcode": "780000",
+            "districts": [
+                {
+                    "district": "Thành phố Vũng Tàu",
+                    "wards": [
+                        {
+                            "ward": "Phường 1",
+                            "streets": [
+                                "Đường Trần Phú",
+                                "Đường Lê Lợi"
+                            ]
+                        },
+                        {
+                            "ward": "Phường 2",
+                            "streets": [
+                                "Đường Nguyễn Thị Minh Khai",
+                                "Đường Hùng Vương"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Long Điền",
+                    "wards": [
+                        {
+                            "ward": "Xã Long Hải",
+                            "streets": [
+                                "Đường Nguyễn Văn Cừ",
+                                "Đường Lê Lợi"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Phước Tỉnh",
+                            "streets": [
+                                "Đường Trần Hưng Đạo",
+                                "Đường Độc Lập"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "province": "Thành phố Hồ Chí Minh",
+            "zipcode": "700000",
+            "districts": [
+                {
+                    "district": "Quận 1",
+                    "wards": [
+                        {
+                            "ward": "Phường Bến Nghé",
+                            "streets": [
+                                "Đường Nguyễn Huệ",
+                                "Đường Lê Lợi"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Đa Kao",
+                            "streets": [
+                                "Đường Trần Hưng Đạo",
+                                "Đường Nguyễn Thị Minh Khai"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Quận 2",
+                    "wards": [
+                        {
+                            "ward": "Phường Thảo Điền",
+                            "streets": [
+                                "Đường Quốc Hương",
+                                "Đường Lương Định Của"
+                            ]
+                        },
+                        {
+                            "ward": "Phường An Phú",
+                            "streets": [
+                                "Đường Nguyễn Hoàng",
+                                "Đường Trần Não"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "province": "Tỉnh Long An",
+            "zipcode": "850000",
+            "districts": [
+                {
+                    "district": "Thành phố Tân An",
+                    "wards": [
+                        {
+                            "ward": "Phường 1",
+                            "streets": [
+                                "Đường Lê Văn Nghĩa",
+                                "Đường Trần Hưng Đạo"
+                            ]
+                        },
+                        {
+                            "ward": "Phường 2",
+                            "streets": [
+                                "Đường Nguyễn Văn Cừ",
+                                "Đường Hùng Vương"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Bến Lức",
+                    "wards": [
+                        {
+                            "ward": "Xã Bến Lức",
+                            "streets": [
+                                "Đường ĐT 830",
+                                "Đường ĐT 835"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Nhựt Chánh",
+                            "streets": [
+                                "Đường Trần Phú",
+                                "Đường Lê Lợi"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "province": "Tỉnh Tiền Giang",
+            "zipcode": "860000",
+            "districts": [
+                {
+                    "district": "Thành phố Mỹ Tho",
+                    "wards": [
+                        {
+                            "ward": "Phường 1",
+                            "streets": [
+                                "Đường Lê Thị Hồng Gấm",
+                                "Đường Nguyễn Đình Chiểu"
+                            ]
+                        },
+                        {
+                            "ward": "Phường 2",
+                            "streets": [
+                                "Đường Trần Hưng Đạo",
+                                "Đường Nguyễn Huệ"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Châu Thành",
+                    "wards": [
+                        {
+                            "ward": "Xã Châu Thành",
+                            "streets": [
+                                "Đường Ấp Bắc",
+                                "Đường Quốc Lộ 1A"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Tân Hội",
+                            "streets": [
+                                "Đường Trần Văn Giàu",
+                                "Đường Hùng Vương"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "province": "Tỉnh Bến Tre",
+            "zipcode": "870000",
+            "districts": [
+                {
+                    "district": "Thành phố Bến Tre",
+                    "wards": [
+                        {
+                            "ward": "Phường 1",
+                            "streets": [
+                                "Đường 30 Tháng 4",
+                                "Đường Nguyễn Thị Định"
+                            ]
+                        },
+                        {
+                            "ward": "Phường 2",
+                            "streets": [
+                                "Đường Trần Văn Kiết",
+                                "Đường Hùng Vương"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Châu Thành",
+                    "wards": [
+                        {
+                            "ward": "Xã An Khánh",
+                            "streets": [
+                                "Đường An Khánh",
+                                "Đường Bến Tre"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Tân Thạch",
+                            "streets": [
+                                "Đường Tân Thạch",
+                                "Đường Nguyễn Huệ"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "province": "Tỉnh Trà Vinh",
+            "zipcode": "880000",
+            "districts": [
+                {
+                    "district": "Thành phố Trà Vinh",
+                    "wards": [
+                        {
+                            "ward": "Phường 1",
+                            "streets": [
+                                "Đường Nguyễn Thị Minh Khai",
+                                "Đường Trần Phú"
+                            ]
+                        },
+                        {
+                            "ward": "Phường 2",
+                            "streets": [
+                                "Đường Phạm Ngọc Thạch",
+                                "Đường Lê Văn Lương"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Cầu Kè",
+                    "wards": [
+                        {
+                            "ward": "Xã Cầu Kè",
+                            "streets": [
+                                "Đường Cầu Kè",
+                                "Đường 30 Tháng 4"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Tam Ngãi",
+                            "streets": [
+                                "Đường Tam Ngãi",
+                                "Đường Trần Văn Đạt"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "province": "Tỉnh Vĩnh Long",
+            "zipcode": "890000",
+            "districts": [
+                {
+                    "district": "Thành phố Vĩnh Long",
+                    "wards": [
+                        {
+                            "ward": "Phường 1",
+                            "streets": [
+                                "Đường Lê Thánh Tôn",
+                                "Đường Nguyễn Huệ"
+                            ]
+                        },
+                        {
+                            "ward": "Phường 2",
+                            "streets": [
+                                "Đường Trần Phú",
+                                "Đường Hùng Vương"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Vũng Liêm",
+                    "wards": [
+                        {
+                            "ward": "Xã Vũng Liêm",
+                            "streets": [
+                                "Đường Vũng Liêm",
+                                "Đường Quốc Lộ 53"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Trung Nguyên",
+                            "streets": [
+                                "Đường Trần Văn Kiết",
+                                "Đường Nguyễn Văn Trỗi"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "province": "Tỉnh Đồng Tháp",
+            "zipcode": "910000",
+            "districts": [
+                {
+                    "district": "Thành phố Cao Lãnh",
+                    "wards": [
+                        {
+                            "ward": "Phường 1",
+                            "streets": [
+                                "Đường Hùng Vương",
+                                "Đường Lê Lợi"
+                            ]
+                        },
+                        {
+                            "ward": "Phường 2",
+                            "streets": [
+                                "Đường Nguyễn Văn Cừ",
+                                "Đường Trần Hưng Đạo"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Sa Đéc",
+                    "wards": [
+                        {
+                            "ward": "Xã Sa Đéc",
+                            "streets": [
+                                "Đường Trần Phú",
+                                "Đường Nguyễn Huệ"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Tân Khánh Đông",
+                            "streets": [
+                                "Đường Đặng Thị Nhu",
+                                "Đường Lê Thánh Tôn"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "province": "Tỉnh An Giang",
+            "zipcode": "900000",
+            "districts": [
+                {
+                    "district": "Thành phố Long Xuyên",
+                    "wards": [
+                        {
+                            "ward": "Phường Mỹ Bình",
+                            "streets": [
+                                "Đường Trần Hưng Đạo",
+                                "Đường Nguyễn Văn Cừ"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Mỹ Phước",
+                            "streets": [
+                                "Đường Lê Hồng Phong",
+                                "Đường Hùng Vương"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Châu Đốc",
+                    "wards": [
+                        {
+                            "ward": "Xã Châu Phong",
+                            "streets": [
+                                "Đường 30 Tháng 4",
+                                "Đường Trần Quốc Toản"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Vĩnh Tế",
+                            "streets": [
+                                "Đường Vĩnh Tế",
+                                "Đường Lê Thánh Tôn"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "province": "Tỉnh Kiên Giang",
+            "zipcode": "920000",
+            "districts": [
+                {
+                    "district": "Thành phố Rạch Giá",
+                    "wards": [
+                        {
+                            "ward": "Phường Vĩnh Lợi",
+                            "streets": [
+                                "Đường Nguyễn Thị Minh Khai",
+                                "Đường Lê Hồng Phong"
+                            ]
+                        },
+                        {
+                            "ward": "Phường An Hòa",
+                            "streets": [
+                                "Đường Trần Hưng Đạo",
+                                "Đường Lê Văn Tám"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Kiên Hải",
+                    "wards": [
+                        {
+                            "ward": "Xã An Sơn",
+                            "streets": [
+                                "Đường An Sơn",
+                                "Đường Thạnh Sơn"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Lại Sơn",
+                            "streets": [
+                                "Đường Lại Sơn",
+                                "Đường Kiên Hải"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "province": "Thành phố Cần Thơ",
+            "zipcode": "940000",
+            "districts": [
+                {
+                    "district": "Quận Ninh Kiều",
+                    "wards": [
+                        {
+                            "ward": "Phường An Khánh",
+                            "streets": [
+                                "Đường Trần Văn Khéo",
+                                "Đường Nguyễn Thị Minh Khai"
+                            ]
+                        },
+                        {
+                            "ward": "Phường Cái Khế",
+                            "streets": [
+                                "Đường Đinh Tiên Hoàng",
+                                "Đường Lê Lợi"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Cờ Đỏ",
+                    "wards": [
+                        {
+                            "ward": "Xã Thới Đông",
+                            "streets": [
+                                "Đường Thới Đông",
+                                "Đường Đỗ Xuân Hợp"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Trung Thạnh",
+                            "streets": [
+                                "Đường Trung Thạnh",
+                                "Đường Cần Thơ"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "province": "Tỉnh Hậu Giang",
+            "zipcode": "950000",
+            "districts": [
+                {
+                    "district": "Thành phố Vị Thanh",
+                    "wards": [
+                        {
+                            "ward": "Phường 1",
+                            "streets": [
+                                "Đường Trần Hưng Đạo",
+                                "Đường Nguyễn Huệ"
+                            ]
+                        },
+                        {
+                            "ward": "Phường 2",
+                            "streets": [
+                                "Đường Lê Văn Tám",
+                                "Đường Hùng Vương"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Long Mỹ",
+                    "wards": [
+                        {
+                            "ward": "Xã Long Mỹ",
+                            "streets": [
+                                "Đường Long Mỹ",
+                                "Đường Đinh Tiên Hoàng"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Lương Tâm",
+                            "streets": [
+                                "Đường Lương Tâm",
+                                "Đường Phan Đình Phùng"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "province": "Tỉnh Sóc Trăng",
+            "zipcode": "960000",
+            "districts": [
+                {
+                    "district": "Thành phố Sóc Trăng",
+                    "wards": [
+                        {
+                            "ward": "Phường 1",
+                            "streets": [
+                                "Đường Lê Văn Tám",
+                                "Đường Trần Hưng Đạo"
+                            ]
+                        },
+                        {
+                            "ward": "Phường 2",
+                            "streets": [
+                                "Đường Nguyễn Huệ",
+                                "Đường Lê Lợi"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Mỹ Tú",
+                    "wards": [
+                        {
+                            "ward": "Xã Mỹ Tú",
+                            "streets": [
+                                "Đường Mỹ Tú",
+                                "Đường Quốc Lộ 1A"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Mỹ Xuyên",
+                            "streets": [
+                                "Đường Mỹ Xuyên",
+                                "Đường Hùng Vương"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "province": "Tỉnh Bạc Liêu",
+            "zipcode": "970000",
+            "districts": [
+                {
+                    "district": "Thành phố Bạc Liêu",
+                    "wards": [
+                        {
+                            "ward": "Phường 1",
+                            "streets": [
+                                "Đường Lê Duẩn",
+                                "Đường Trần Phú"
+                            ]
+                        },
+                        {
+                            "ward": "Phường 2",
+                            "streets": [
+                                "Đường Nguyễn Thị Minh Khai",
+                                "Đường Hùng Vương"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Bạc Liêu",
+                    "wards": [
+                        {
+                            "ward": "Xã Vĩnh Trạch Đông",
+                            "streets": [
+                                "Đường Vĩnh Trạch",
+                                "Đường Trần Quốc Toản"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Hòa Bình",
+                            "streets": [
+                                "Đường Hòa Bình",
+                                "Đường Độc Lập"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "province": "Tỉnh Cà Mau",
+            "zipcode": "980000",
+            "districts": [
+                {
+                    "district": "Thành phố Cà Mau",
+                    "wards": [
+                        {
+                            "ward": "Phường 1",
+                            "streets": [
+                                "Đường Lê Thánh Tôn",
+                                "Đường Trần Hưng Đạo"
+                            ]
+                        },
+                        {
+                            "ward": "Phường 2",
+                            "streets": [
+                                "Đường Nguyễn Huệ",
+                                "Đường Hùng Vương"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "district": "Huyện Cà Mau",
+                    "wards": [
+                        {
+                            "ward": "Xã Đốc Binh Kiều",
+                            "streets": [
+                                "Đường Đốc Binh Kiều",
+                                "Đường Quốc Lộ 1A"
+                            ]
+                        },
+                        {
+                            "ward": "Xã Tân Thành",
+                            "streets": [
+                                "Đường Tân Thành",
+                                "Đường Trần Văn Giàu"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+        
+    ],
+    "names": {
+        "boy": {
+            "first_names": [
+                "Nguyễn",
+                "Trần",
+                "Lê",
+                "Phạm",
+                "Hoàng"
+            ],
+            "middle_names": [
+                "Văn",
+                "Đức",
+                "Hữu",
+                "Quang",
+                "Trọng",
+                "Đình"
+            ],
+            "last_names": [
+                "An",
+                "Bảo",
+                "Cường",
+                "Dũng",
+                "Hải",
+                "Hiếu",
+                "Quốc",
+                "Lợi"
+
+            ]
+        },
+        "girl": {
+            "first_names": [
+                "Nguyễn",
+                "Trần",
+                "Lê",
+                "Huỳnh",
+                "Hồ"
+            ],
+            "middle_names": [
+                "Thị",
+                "Ngọc",
+                "Bảo",
+                "Diệu"
+            ],
+            "last_names": [
+                "Anh",
+                "Hạnh",
+                "Lan",
+                "Phương",
+                "Yến",
+                "Ngân",
+                "Như",
+                "Thảo",
+                "Yến",
+                "Vy",
+                "Hân", 
+                "Linh",
+                "Nhi",
+                "My", 
+                "Trang", 
+                "Quỳnh", 
+                "Châu",
+                "Trúc",
+                "Uyên",
+                "Yến",
+                "Ý", 
+                "Hương",
+                "Trinh", 
+                "Hiền", 
+                "Ly",
+                "Mỹ", 
+                "Oanh"
+
+            ]
+        }
+    }
+}

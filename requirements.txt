@@ -1,0 +1,7 @@
+python-telegram-bot
+python-dotenv
+telethon
+pandas
+requests
+python-telegram-bot[job-queue]
+pymongo

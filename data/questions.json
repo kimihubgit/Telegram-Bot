@@ -1,0 +1,32 @@
+{
+
+    "MEO": [
+        {
+            "question": "Cái gì không có bắt đầu, không có kết thúc và không ở giữa?",
+            "OPI": ["Vòng tròn", "Thời gian", "Mặt trời", "Cuốn sách"],
+            "CO": "Vòng tròn",
+            "EX": "Giải thích cho câu trả lời",
+            "INDEX": 1
+        },
+        {
+            "question": "Cái gì có thể ở khắp mọi nơi, nhưng không thể nhìn thấy?",
+            "OPI": ["Không khí", "Thời gian", "Tương lai", "Suy nghĩ"],
+            "CO": "Không khí",
+            "EX": "Giải thích cho câu trả lời",
+            "INDEX": 2
+        },
+        {
+            "question": "Cái gì không có miệng nhưng có thể nói, không có tai nhưng có thể nghe?",
+            "OPI": ["Cái loa", "Cái đài", "Tiếng vang", "Gió"],
+            "CO": "Tiếng vang",
+            "EX": "Giải thích cho câu trả lời",
+            "INDEX": 3
+        }
+    
+    ], 
+    "KHOAHOC": []
+    
+
+}
+    
+    

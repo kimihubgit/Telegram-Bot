@@ -1,0 +1,109 @@
+{
+    "contact": {
+        "telegram": [
+            {
+                "username": "kjhdkhsdf",
+                "id": 8119900362
+            }
+        ],
+        "facebook": [
+            {
+                "id": 109876543210,
+                "link": "https://www.facebook.com/nguyenvanA",
+                "name": "Nguyễn Văn A"
+            }
+        ],
+        "phone": [
+            {
+                "full_number": "+84901234567",
+                "country_code": "84",
+                "national_number": "901234567",
+                "iso_country": "VN",
+                "carrier": "Viettel",
+                "tag": [
+                    "Shipper Lừa Đảo Giao Hàng",
+                    "Lừa Đảo Cọc Mua Hàng"
+                ]
+            }
+        ],
+        "email": [
+            {
+                "address": "nguyenvana.crypto@gmail.com",
+                "tag": [
+                    "Email chính",
+                    "Dùng đăng ký Netflix lừa đảo"
+                ]
+            }
+        ],
+        "other": []
+    },
+    "payments": {
+        "bank": [
+            {
+                "bank_name": "Vietcombank",
+                "short_name": "VCB",
+                "account_number": "1012345678",
+                "account_holder": "NGUYEN VAN A",
+                "bin_code": "970436"
+            }
+        ],
+        "wallet": [
+            {
+                "platform": "Momo",
+                "phone_number": "0901234567",
+                "owner_name": "NGUYEN VAN A"
+            }
+        ],
+        "crypto": [
+            {
+                "network": "TRC20",
+                "address": "Txxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                "coin": "USDT"
+            }
+        ],
+        "binance": [
+            {
+                "binance_id": "123456789",
+                "tag": [
+                    "Chuyên nhận tiền P2P",
+                    "Acc mua lại"
+                ]
+            }
+        ],
+        "paypal": [],
+        "other": []
+    },
+    "incidents": [
+        {
+            "ref": {
+                "report_id": "REP_99999",
+                "scammer_id": "SCM-00001"
+            },
+            "date": "2026-05-13",
+            "status": "active",
+            "type": "Lừa đảo bán tài khoản",
+            "losses": [
+                {
+                    "amount": 200000,
+                    "currency": "VND"
+                }
+            ],
+            "description": "Nạn nhân mua tài khoản game, chuyển tiền cọc xong bị chặn tài khoản chat.",
+            "raw": {
+                "detail": "Mình bị tài khoản Telegram @kjhdkhsdf lừa bán acc game giá 500k. Thằng này bảo chuyển cọc trước 200k vào số tài khoản Vietcombank 1012345678 tên NGUYEN VAN A. Mình chuyển xong thì bị nó block luôn.",
+                "images": [
+                    "https://cdn.example.com/screenshot_chat_1.jpg",
+                    "https://cdn.example.com/bill_200k.jpg"
+                ],
+                "posts": [
+                    "https://scammer.vn/post_scammer_1"
+                ],
+                "other": []
+            }
+        }
+    ],
+    "metadata": {
+        "created_at": "2024-05-13T08:00:00Z",
+        "updated_at": "2024-05-13T09:00:00Z"
+    }
+}

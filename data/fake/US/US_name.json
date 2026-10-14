@@ -1,0 +1,56 @@
+{
+    "names": {
+        "boy": {
+            "first_names": [
+                "Liam",
+                "Noah",
+                "Oliver",
+                "Elijah",
+                "James"
+            ],
+            "middle_names": [
+                "Michael",
+                "William",
+                "David",
+                "Joseph",
+                "Charles"
+            ],
+            "last_names": [
+                "Smith",
+                "Johnson",
+                "Williams",
+                "Brown",
+                "Jones",
+                "Garcia",
+                "Miller",
+                "Davis"
+            ]
+        },
+        "girl": {
+            "first_names": [
+                "Olivia",
+                "Emma",
+                "Ava",
+                "Sophia",
+                "Isabella"
+            ],
+            "middle_names": [
+                "Rose",
+                "Marie",
+                "Grace",
+                "Elizabeth",
+                "Anne"
+            ],
+            "last_names": [
+                "Smith",
+                "Johnson",
+                "Williams",
+                "Brown",
+                "Jones",
+                "Garcia",
+                "Miller",
+                "Davis"
+            ]
+        }
+    }
+}

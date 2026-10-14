@@ -1,0 +1,27 @@
+{
+    "scam": {
+        "label": "Lừa đảo",
+        "action": "ban",
+        "description": "Ban và xóa khỏi nhóm"
+    },
+    "fake_bio": {
+        "label": "Giả mạo Bio",
+        "action": "ban",
+        "description": "Ban và xóa khỏi nhóm"
+    },
+    "spam": {
+        "label": "Spam",
+        "action": "mute",
+        "description": "Cấm chat vĩnh viễn (vẫn trong nhóm)"
+    },
+    "left_group": {
+        "label": "Tự rời nhóm",
+        "action": "ban",
+        "description": "Tự rời nhóm — ban vĩnh viễn, cấm vào lại"
+    },
+    "items_banned": {
+        "label": "item cấm sử dụng",
+        "action": "ban",
+        "description": "vật phẩm không được mua bán, trao đổi .."
+    }
+}
