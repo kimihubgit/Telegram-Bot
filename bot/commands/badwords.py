@@ -1,24 +1,29 @@
-# """
-# Bad Words Filter
-# Tự động phát hiện và xử lý tin nhắn chứa từ tục trong nhóm.
+"""
+Bad Words Filter
+Tự động phát hiện và xử lý tin nhắn chứa từ tục, ngôn từ độc hại trong nhóm.
 
-# Hệ thống xử lý:
-# - Vi phạm 1-2 lần: Xóa tin nhắn (không thông báo)
-# - Vi phạm lần 3: Xóa tin nhắn + gửi tin nhắn riêng cho user
-#   (thông báo vi phạm quá nhiều, kèm nút inbox bot)
-# - Vi phạm lần 4+: Xóa tin nhắn + gửi tin nhắn riêng kèm từ khóa vi phạm
-# - Admin/Creator: Miễn trừ
-
-# Cần file data/bad_words.json chứa danh sách từ cấm.
-# """
-
+Hệ thống xử lý:
+- Vi phạm 1-3 lần: Xóa tin nhắn âm thầm (hoặc ghi log)
+- Vi phạm lần 4: Mute 5 phút + cảnh báo trong nhóm + nút "Hứa không chửi tục nữa (Gỡ Mute)"
+- Hỗ trợ bắt cả tin nhắn text, ảnh/video có chú thích (caption), và tin nhắn được chỉnh sửa (edited_message)
+- Miễn trừ Quản trị viên (Admin/Creator)
+- Quản trị động qua lệnh: /addbadword, /delbadword, /badwords, /resetwarn
+"""
 
 import re
 import os
 import json
 import time
+import threading
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, ChatPermissions
-from telegram.ext import ContextTypes, MessageHandler, CommandHandler, filters, CallbackQueryHandler, ApplicationHandlerStop
+from telegram.ext import (
+    ContextTypes,
+    MessageHandler,
+    CommandHandler,
+    filters,
+    CallbackQueryHandler,
+    ApplicationHandlerStop
+)
 from bot.utils.logger import log_command
 
 # === Config ===
@@ -29,42 +34,74 @@ _DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "data")
 _BAD_WORDS_PATH = os.path.join(_DATA_DIR, "bad_words.json")
 _VIOLATIONS_PATH = os.path.join(_DATA_DIR, "user_violations.json")
 
-# === In-memory data ===
+# === Thread safety & cache ===
+_lock = threading.Lock()
 _bad_words: list = []
 _bad_words_regex = None
 _violations: dict = {}
 
+
+def _atomic_write_json(file_path: str, data):
+    """Ghi file dạng atomic để tránh hỏng dữ liệu khi ghi đồng thời"""
+    abs_path = os.path.abspath(file_path)
+    os.makedirs(os.path.dirname(abs_path), exist_ok=True)
+    temp_path = f"{abs_path}.tmp"
+    with open(temp_path, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+    os.replace(temp_path, abs_path)
+
+
 def _load_json(path, default):
-    try:
-        abs_path = os.path.abspath(path)
-        if os.path.exists(abs_path):
-            with open(abs_path, "r", encoding="utf-8") as f:
-                return json.load(f)
-    except Exception as e:
-        print(f"⚠️ Error loading {path}: {e}")
+    with _lock:
+        try:
+            abs_path = os.path.abspath(path)
+            if os.path.exists(abs_path):
+                with open(abs_path, "r", encoding="utf-8") as f:
+                    return json.load(f)
+        except Exception as e:
+            print(f"⚠️ Error loading {path}: {e}")
     return default
 
+
 def _save_json(path, data):
-    try:
-        abs_path = os.path.abspath(path)
-        os.makedirs(os.path.dirname(abs_path), exist_ok=True)
-        with open(abs_path, "w", encoding="utf-8") as f:
-            json.dump(data, f, ensure_ascii=False, indent=2)
-    except Exception as e:
-        print(f"⚠️ Error saving {path}: {e}")
+    with _lock:
+        try:
+            _atomic_write_json(path, data)
+        except Exception as e:
+            print(f"⚠️ Error saving {path}: {e}")
+
 
 def _init_filter():
     global _bad_words, _bad_words_regex, _violations
     _bad_words = _load_json(_BAD_WORDS_PATH, [])
     _violations = _load_json(_VIOLATIONS_PATH, {})
+    _rebuild_regex()
 
+
+def _rebuild_regex():
+    global _bad_words_regex
     if _bad_words:
-        pattern = r'(?:' + '|'.join(map(re.escape, _bad_words)) + r')'
+        # Sắp xếp từ dài trước từ ngắn để regex match chính xác
+        sorted_words = sorted(set(_bad_words), key=len, reverse=True)
+        pattern = r'(?:\b|_|\s|^)(?:' + '|'.join(map(re.escape, sorted_words)) + r')(?:\b|_|\s|$)'
         _bad_words_regex = re.compile(pattern, re.IGNORECASE)
     else:
         _bad_words_regex = None
 
-async def _auto_delete_warning(context):
+
+async def _is_admin(chat, user, context: ContextTypes.DEFAULT_TYPE) -> bool:
+    if not chat or chat.type not in ("group", "supergroup"):
+        return False
+    if not user:
+        return False
+    try:
+        member = await context.bot.get_chat_member(chat.id, user.id)
+        return member.status in ("administrator", "creator")
+    except Exception:
+        return False
+
+
+async def _auto_delete_warning(context: ContextTypes.DEFAULT_TYPE):
     """Tự động xóa tin nhắn cảnh báo + reset vi phạm sau khi hết mute."""
     data = context.job.data
     try:
@@ -74,39 +111,48 @@ async def _auto_delete_warning(context):
         )
     except Exception as e:
         print(f"⚠️ Không xóa được tin nhắn cảnh báo: {e}")
-        # return
-    # Chỉ reset history nếu từ lúc bị mute đến giờ họ chưa vi phạm thêm lần nào (count vẫn bằng 0)
+
     user_key = data["user_key"]
     if _violations.get(user_key, {}).get("count") == 0:
         _violations[user_key]["history"] = []
         _save_json(_VIOLATIONS_PATH, _violations)
 
+
 async def check_bad_words(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not _bad_words_regex or not update.message or not update.message.text:
-        return
-    if update.effective_chat.type not in ("group", "supergroup"):
+    """Quét tin nhắn trong nhóm, bao gồm cả text, caption ảnh và tin chỉnh sửa"""
+    if not _bad_words_regex:
         return
 
-    message_text = update.message.text
-    user = update.message.from_user
-    chat_id = update.effective_chat.id
-    thread_id = update.message.message_thread_id
+    msg = update.effective_message
+    if not msg:
+        return
+
+    # Lấy text từ tin nhắn hoặc caption media
+    message_text = (msg.text or msg.caption or "").strip()
+    if not message_text:
+        return
+
+    chat = update.effective_chat
+    if not chat or chat.type not in ("group", "supergroup"):
+        return
+
+    user = update.effective_user
+    if not user or user.is_bot:
+        return
+
+    # Miễn trừ Quản trị viên
+    if await _is_admin(chat, user, context):
+        return
+
     match = _bad_words_regex.search(message_text.lower())
     if not match:
         return
 
-    # Miễn trừ Admin
-    # try:
-    #     member = await context.bot.get_chat_member(chat_id, user.id)
-    #     if member.status in ("administrator", "creator"):
-    #         return
-    # except:
-    #     pass
-
+    # 1. Xóa tin nhắn vi phạm
     try:
-        await update.message.delete()
+        await msg.delete()
     except Exception as e:
-        print(f"⚠️ Không xóa được tin nhắn: {e}")
+        print(f"⚠️ Không xóa được tin nhắn vi phạm từ cấm: {e}")
 
     # Ghi log vi phạm
     user_name = user.full_name or user.first_name or str(user.id)
@@ -114,14 +160,13 @@ async def check_bad_words(update: Update, context: ContextTypes.DEFAULT_TYPE):
         user_id=user.id,
         user_name=user_name,
         username=user.username,
-        command_text=f"[BADWORD] Từ cấm: \"{match.group()}\" | Câu vi phạm: \"{message_text}\""
+        command_text=f"[BADWORD] Từ cấm: \"{match.group().strip()}\" | Câu: \"{message_text}\""
     )
 
     # 2. Cập nhật số lần vi phạm
     user_key = str(user.id)
-    matched_word = match.group()
+    matched_word = match.group().strip()
 
-    # Migrate old format (int) to new format (dict)
     if isinstance(_violations.get(user_key), int):
         _violations[user_key] = {"count": _violations[user_key], "history": []}
 
@@ -134,66 +179,63 @@ async def check_bad_words(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "word": matched_word,
         "time": time.strftime("%Y-%m-%d %H:%M:%S")
     })
-    # Chỉ giữ lại history trong chu kỳ hiện tại (giới hạn SILENT_THRESHOLD)
     _violations[user_key]["history"] = _violations[user_key]["history"][-SILENT_THRESHOLD:]
     count = _violations[user_key]["count"]
 
-    # 3. Xử lý thông báo theo số lần
+    # 3. Mute nếu vi phạm vượt ngưỡng
     if count >= SILENT_THRESHOLD:
-        mute_permissions = ChatPermissions(can_send_messages=False)
         mute_duration = 300  # 5 phút
         until_date = int(time.time() + mute_duration)
         try:
             await context.bot.restrict_chat_member(
-                chat_id=chat_id,
+                chat_id=chat.id,
                 user_id=user.id,
-                permissions=mute_permissions,
+                permissions=ChatPermissions(can_send_messages=False),
                 until_date=until_date
             )
         except Exception as e:
-            print(f"⚠️ Lỗi mute bad_words: {e}")
-        bot_username = context.bot.username
+            print(f"⚠️ Lỗi restrict_chat_member badwords: {e}")
+
+        bot_username = context.bot.username or ""
         keyboard = InlineKeyboardMarkup([
-            [InlineKeyboardButton("🔍 check vi phạm", url=f"https://t.me/{bot_username}?start=check_violation")],
+            [InlineKeyboardButton("🔍 Xem chi tiết vi phạm", url=f"https://t.me/{bot_username}?start=check_violation")],
             [InlineKeyboardButton("✅ Hứa không chửi tục nữa (Gỡ Mute)", callback_data=f"unmute_{user.id}")]
         ])
 
         text_warning = (
             f"⚠️ <a href='tg://user?id={user.id}'>{user.first_name}</a>, "
-            f"bạn chửi tục ít lại nhé, chửi tục hơi nhiều rồi đó!\n"
-            f"<i>(Vi phạm lần thứ {count} rồi đó :V)</i>"
+            f"bạn hãy giữ văn hóa giao tiếp trong nhóm nhé!\n"
+            f"<i>(Đã vi phạm quy định ngôn từ lần thứ {count} — tạm dừng gửi tin nhắn 5 phút)</i>"
         )
-        
-        
+
         try:
             warning_msg = await context.bot.send_message(
-                chat_id=chat_id,
+                chat_id=chat.id,
                 text=text_warning,
-                message_thread_id=thread_id, # Gửi vào đúng Topic
-                reply_markup=keyboard,       # Thêm nút bấm
+                message_thread_id=msg.message_thread_id,
+                reply_markup=keyboard,
                 parse_mode="HTML"
             )
-            # Tự động xóa tin nhắn cảnh báo + reset vi phạm sau khi hết mute
-            context.job_queue.run_once(
-                _auto_delete_warning,
-                when=mute_duration,
-                data={
-                    "chat_id": chat_id,
-                    "message_id": warning_msg.message_id,
-                    "user_key": user_key,
-                },
-                name=f"delete_warn_{user.id}"
-            )
+
+            # Tự động xóa cảnh báo và reset sau khi hết thời gian mute
+            if context.job_queue:
+                context.job_queue.run_once(
+                    _auto_delete_warning,
+                    when=mute_duration,
+                    data={
+                        "chat_id": chat.id,
+                        "message_id": warning_msg.message_id,
+                        "user_key": user_key,
+                    },
+                    name=f"delete_warn_{user.id}"
+                )
         except Exception as e:
             print(f"⚠️ Lỗi gửi cảnh báo group: {e}")
 
-        # === QUAN TRỌNG: Reset số lần vi phạm về 0 sau khi nhắc nhở (giữ lại history) ===
+        # Reset count về 0 sau khi xử phạt
         _violations[user_key]["count"] = 0
-    
-    # Lưu lại dữ liệu (dù là tăng lên 1, 2 hay reset về 0)
-    _save_json(_VIOLATIONS_PATH, _violations)
 
-    # Chặn đứng hoàn toàn, không cho chạy xuống các handler phía sau (lệnh)
+    _save_json(_VIOLATIONS_PATH, _violations)
     raise ApplicationHandlerStop()
 
 
@@ -203,54 +245,139 @@ async def handle_unmute_callback(update: Update, context: ContextTypes.DEFAULT_T
     user_id_to_unmute = int(data.split("_")[1])
     current_user_id = query.from_user.id
 
-    # Chỉ người bị mute mới có quyền nhấn nút của chính mình
     if current_user_id != user_id_to_unmute:
-        await query.answer("❌ Nút này không dành cho bạn!", show_alert=True)
+        await query.answer("❌ Nút này chỉ dành cho người đang bị hạn chế!", show_alert=True)
         return
 
-    # Gỡ mute (trả lại quyền hạn bình thường của group)
-    normal_permissions = (await context.bot.get_chat(update.effective_chat.id)).permissions
-    current_jobs = context.job_queue.get_jobs_by_name(f"delete_warn_{current_user_id}")
-    
+    chat_id = update.effective_chat.id
+    current_jobs = context.job_queue.get_jobs_by_name(f"delete_warn_{current_user_id}") if context.job_queue else []
+
     try:
+        chat_obj = await context.bot.get_chat(chat_id)
+        normal_permissions = chat_obj.permissions
         await context.bot.restrict_chat_member(
-            chat_id=update.effective_chat.id,
+            chat_id=chat_id,
             user_id=current_user_id,
             permissions=normal_permissions
         )
         for job in current_jobs:
-            job.schedule_removal() # Hủy lịch hẹn giờ, Job sẽ biến mất hoàn toàn!
-        await query.answer("✅ Bạn đã được gỡ mute. Hãy giữ văn hóa nhé!", show_alert=True)
-        # Reset vi phạm (count + history) sau khi gỡ mute
+            job.schedule_removal()
+
+        await query.answer("✅ Bạn đã được gỡ hạn chế. Hãy tuân thủ văn hóa nhóm nhé!", show_alert=True)
+
         user_key = str(current_user_id)
-        _violations[user_key] = {"count": 0, "history": []}
-        _save_json(_VIOLATIONS_PATH, _violations)
-        # Sửa lại tin nhắn cũ để thông báo đã xong
+        if user_key in _violations:
+            _violations[user_key] = {"count": 0, "history": []}
+            _save_json(_VIOLATIONS_PATH, _violations)
+
         await query.edit_message_text(
-            text=f"✅ Nhớ nhé <a href='tg://user?id={current_user_id}'>{query.from_user.first_name}</a> đã hứa rồi đó, không được chửi tục nữa, không thui là lần sau mute lâu hơn đó :V",
+            text=f"✅ <a href='tg://user?id={current_user_id}'>{query.from_user.first_name}</a> đã cam kết giữ văn hóa giao tiếp và được gỡ mute thành công.",
             parse_mode="HTML"
         )
     except Exception as e:
-        await query.answer("⚠️ Lỗi: Bot không đủ quyền để gỡ mute.", show_alert=True)
+        print(f"⚠️ Lỗi unmute callback: {e}")
+        await query.answer("⚠️ Bot không đủ quyền hạn quản trị để gỡ mute.", show_alert=True)
+
 
 async def resetwarn_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Lệnh Admin: /resetwarn <user_id|reply>"""
     chat = update.effective_chat
-    if chat.type not in ("group", "supergroup"): return
-    
-    caller = await context.bot.get_chat_member(chat.id, update.effective_user.id)
-    if caller.status not in ("administrator", "creator"):
+    user = update.effective_user
+    msg = update.effective_message
+
+    if not await _is_admin(chat, user, context):
+        await msg.reply_text("⛔ Chỉ Quản trị viên mới được sử dụng lệnh này.")
         return
 
     target_id = None
     if context.args and context.args[0].isdigit():
         target_id = context.args[0]
-    elif update.message.reply_to_message:
-        target_id = str(update.message.reply_to_message.from_user.id)
+    elif msg.reply_to_message and msg.reply_to_message.from_user:
+        target_id = str(msg.reply_to_message.from_user.id)
 
     if target_id and target_id in _violations:
         _violations[target_id] = {"count": 0, "history": []}
         _save_json(_VIOLATIONS_PATH, _violations)
-        await update.message.reply_text(f"✅ Đã reset vi phạm cho `{target_id}`", parse_mode="MarkdownV2")
+        await msg.reply_text(f"✅ Đã reset lịch sử vi phạm cho user: <code>{target_id}</code>", parse_mode="HTML")
+    else:
+        await msg.reply_text("Không tìm thấy dữ liệu vi phạm của user này.")
+
+
+async def add_badword_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Lệnh Admin: /addbadword <từ_cấm>"""
+    log_command("addbadword", update)
+    chat = update.effective_chat
+    user = update.effective_user
+    msg = update.effective_message
+
+    if not await _is_admin(chat, user, context):
+        await msg.reply_text("⛔ Chỉ Quản trị viên mới được sử dụng lệnh này.")
+        return
+
+    if not context.args:
+        await msg.reply_text("Cú pháp: <code>/addbadword &lt;từ khóa cần cấm&gt;</code>", parse_mode="HTML")
+        return
+
+    word = " ".join(context.args).strip().lower()
+    if word in _bad_words:
+        await msg.reply_text(f"ℹ️ Từ khóa <code>{word}</code> đã có trong danh sách cấm.", parse_mode="HTML")
+        return
+
+    _bad_words.append(word)
+    _save_json(_BAD_WORDS_PATH, _bad_words)
+    _rebuild_regex()
+
+    await msg.reply_text(f"✅ Đã thêm từ cấm mới: <code>{word}</code> (Tổng cộng: {_bad_words.__len__()} từ).", parse_mode="HTML")
+
+
+async def del_badword_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Lệnh Admin: /delbadword <từ_cấm>"""
+    log_command("delbadword", update)
+    chat = update.effective_chat
+    user = update.effective_user
+    msg = update.effective_message
+
+    if not await _is_admin(chat, user, context):
+        await msg.reply_text("⛔ Chỉ Quản trị viên mới được sử dụng lệnh này.")
+        return
+
+    if not context.args:
+        await msg.reply_text("Cú pháp: <code>/delbadword &lt;từ khóa muốn xóa&gt;</code>", parse_mode="HTML")
+        return
+
+    word = " ".join(context.args).strip().lower()
+    if word not in _bad_words:
+        await msg.reply_text(f"❌ Từ khóa <code>{word}</code> không tồn tại trong danh sách cấm.", parse_mode="HTML")
+        return
+
+    _bad_words.remove(word)
+    _save_json(_BAD_WORDS_PATH, _bad_words)
+    _rebuild_regex()
+
+    await msg.reply_text(f"✅ Đã xóa từ cấm: <code>{word}</code> (Còn lại: {_bad_words.__len__()} từ).", parse_mode="HTML")
+
+
+async def list_badwords_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Lệnh Admin: /badwords xem tổng số từ cấm"""
+    log_command("badwords", update)
+    chat = update.effective_chat
+    user = update.effective_user
+    msg = update.effective_message
+
+    if not await _is_admin(chat, user, context):
+        await msg.reply_text("⛔ Chỉ Quản trị viên mới được sử dụng lệnh này.")
+        return
+
+    total = len(_bad_words)
+    await msg.reply_text(
+        f"📋 <b>Danh Sách Từ Cấm (Bad Words)</b>\n"
+        f"━━━━━━━━━━━━━━━━━━━━\n"
+        f"🔢 <b>Tổng số từ ngữ đang lọc:</b> <code>{total}</code> từ\n"
+        f"💡 <i>Để thêm từ cấm mới:</i> <code>/addbadword &lt;từ&gt;</code>\n"
+        f"💡 <i>Để xóa từ cấm:</i> <code>/delbadword &lt;từ&gt;</code>",
+        parse_mode="HTML"
+    )
+
 
 def get_user_violations(user_id: str) -> list:
     """Trả về danh sách lịch sử vi phạm của user (dùng cho deep link check_violation)."""
@@ -259,11 +386,18 @@ def get_user_violations(user_id: str) -> list:
         return data.get("history", [])
     return []
 
+
+# Khởi tạo nạp từ cấm ban đầu
 _init_filter()
 
+
 def get_handlers():
+    group_filter = (filters.TEXT | filters.CAPTION) & filters.ChatType.GROUPS & ~filters.COMMAND
     return [
-        MessageHandler(filters.TEXT & filters.ChatType.GROUPS & ~filters.COMMAND, check_bad_words),
+        MessageHandler(group_filter, check_bad_words),
         CommandHandler("resetwarn", resetwarn_command),
-        CallbackQueryHandler(handle_unmute_callback, pattern="^unmute_"), # Xử lý nút bấm gỡ mute
+        CommandHandler("addbadword", add_badword_command),
+        CommandHandler("delbadword", del_badword_command),
+        CommandHandler("badwords", list_badwords_command),
+        CallbackQueryHandler(handle_unmute_callback, pattern="^unmute_"),
     ]

@@ -7,6 +7,12 @@ Tự động tìm và đăng ký tất cả command modules
 2. Định nghĩa function get_handlers() trả về list handlers
 3. Hệ thống tự động load!
 """
+import sys
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+
 import importlib
 import pkgutil
 from telegram.ext import Application

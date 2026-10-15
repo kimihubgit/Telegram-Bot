@@ -108,6 +108,9 @@ _SELLER_PATTERNS = [
     re.compile(r'\b\d+k\b.*\b(?:bhf|kbh|bảo\s+hành|full\s+time|acc\s+cấp|chính\s+chủ|add\s+fam|add\s+team|slot\s+fam)\b', re.IGNORECASE),
     re.compile(r'\b(?:bhf|kbh)\b.*\b\d+k\b', re.IGNORECASE),
     re.compile(r'\b\d+k/\d+\s*(?:th|tháng|ngày|d|m|y|năm|slot|acc|1|con)\b', re.IGNORECASE),
+    re.compile(r'(?:https?://)?(?:t\.me|telegram\.me)/(?:\+[a-zA-Z0-9_-]+|joinchat/[a-zA-Z0-9_-]+)', re.IGNORECASE),
+    re.compile(r'\b(?:ib\s+tele|inbox\s+tele|kéo\s+sub|bán\s+sub|tăng\s+view|bán\s+clone|bán\s+via|bán\s+group|thu\s+mua\s+acc|bán\s+xu|bán\s+sao|nạp\s+sao|tele\s+pre|telegram\s+premium|sỉ\s+lẻ|sẵn\s+kho|chốt\s+đơn|bảng\s+giá\s+chi\s+tiết|liên\s+hệ\s+zalo|kèo\s+thơm|cơm\s+gạo|tài\s+xỉu|kéo\s+về\s+bờ)\b', re.IGNORECASE),
+    re.compile(r'\b(?:giá\s*[:=]?\s*\d+[kKđ₫]|\d+[kKđ₫]\s*/\s*(?:tháng|năm|acc|slot|máy|ngày))\b', re.IGNORECASE),
 ]
 
 

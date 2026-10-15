@@ -157,25 +157,33 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Xử lý lệnh /help"""
     log_from_update(update)
     help_text = (
-        f"📚 *DANH SÁCH LỆNH*\n\n"
+        f"📚 *DANH SÁCH LỆNH CHÍNH*\n\n"
         f"🔍 `/check` ⁃ Xem info bản thân hoặc reply một người để xem info họ\n"
         f"🆔 `/myid` ⁃ Lấy Telegram Chat ID của bạn\n"
+        f"🤖 `/checksales` ⁃ Kiểm tra tin nhắn có phải bài rao bán/QC không\n"
+        f"📊 `/stats` ⁃ Xem báo cáo kiểm duyệt hôm nay của nhóm\n"
         f"ℹ️ `/bin` ⁃ Kiểm tra thông tin thẻ \\(BIN\\)\n"
         f"🔑 `/token` ⁃ Kiểm tra token Bot Telegram còn sống hay đã die\n"
         f"👤 `/me` ⁃ Xem thông tin bản thân\n"
-        f"🎬 `/netflix` ⁃ Netflix Free\n"
+        f"💝 `/donate` ⁃ Ủng hộ phát triển bot\n"
     )
     user = update.effective_user
     chat = update.effective_chat
 
-    if chat and chat.type == "private" and _is_admin(user.id):
+    if _is_admin(user.id) or (chat and chat.type in ("group", "supergroup")):
         help_text += (
-            f"\n🔐 *LỆNH ADMIN*\n"
+            f"\n🛡️ *QUẢN TRỊ NHÓM & CHẶN QC*\n"
             f"━━━━━━━━━━━━━━━━━━━━\n"
-            f"📢 `/notification` ⁃ Broadcast tin nhắn đến tất cả user\n"
-            f"🚫 `/banlist` ⁃ Quản lý danh sách cấm\n"
-            f"🔄 `/resetwarn` ⁃ Reset cảnh báo vi phạm\n"
-            f"🔍 `/checkinfo` ⁃ Kiểm tra thông tin user chi tiết\n"
+            f"⚙️ `/marketguard on\\|off` ⁃ Bật/tắt AI lọc quảng cáo nhóm\n"
+            f"🏷️ `/sethashtag #tag` ⁃ Đổi hashtag bắt buộc khi bán hàng\n"
+            f"📈 `/setmaxsales <số>` ⁃ Đổi hạn mức bài bán hàng/ngày\n"
+            f"🔄 `/resetsales <id>` ⁃ Reset hạn mức bài đăng cho user\n"
+            f"🚫 `/addbadword <từ>` ⁃ Thêm từ cấm vào danh sách\n"
+            f"🗑️ `/delbadword <từ>` ⁃ Xóa từ cấm khỏi danh sách\n"
+            f"📋 `/badwords` ⁃ Xem số lượng từ cấm đang kích hoạt\n"
+            f"🧹 `/resetwarn <id>` ⁃ Reset số lần vi phạm chửi tục\n"
+            f"📢 `/notification` ⁃ Broadcast thông báo (Admin Bot)\n"
+            f"⛔ `/banlist` ⁃ Quản lý danh sách cấm (Admin Bot)\n"
         )
 
     help_text += f"\n📡 *Cre:* System bot design by Kimidev Community"

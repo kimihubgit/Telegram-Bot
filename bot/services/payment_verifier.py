@@ -28,29 +28,55 @@ from bot.database.mongo import db
 
 def _load_claimed() -> dict:
     """Tải danh sách các mã giao dịch đã được xác nhận thành công"""
-    doc = db.claimed_payments.find_one({"_id": "claimed_payments"})
-    if not doc:
-        return {"trc20_txids": [], "bank_tids": []}
-    return {
-        "trc20_txids": doc.get("trc20_txids", []),
-        "bank_tids": doc.get("bank_tids", [])
-    }
+    if db is not None:
+        try:
+            doc = db.claimed_payments.find_one({"_id": "claimed_payments"})
+            if doc:
+                return {
+                    "trc20_txids": doc.get("trc20_txids", []),
+                    "bank_tids": doc.get("bank_tids", [])
+                }
+        except Exception as e:
+            print(f"⚠️ Lỗi đọc claimed_payments từ MongoDB: {e}")
+
+    # Fallback an toàn khi MongoDB không chạy
+    with _db_lock:
+        if CLAIMED_FILE.exists():
+            try:
+                with open(CLAIMED_FILE, "r", encoding="utf-8") as f:
+                    return json.load(f)
+            except Exception as e:
+                print(f"⚠️ Lỗi đọc fallback claimed_payments.json: {e}")
+    return {"trc20_txids": [], "bank_tids": []}
 
 
 def _save_claimed(data: dict):
     """Lưu danh sách giao dịch đã xác nhận để chống nạp kép"""
-    try:
-        db.claimed_payments.replace_one(
-            {"_id": "claimed_payments"},
-            {
-                "_id": "claimed_payments",
-                "trc20_txids": data.get("trc20_txids", []),
-                "bank_tids": data.get("bank_tids", [])
-            },
-            upsert=True
-        )
-    except Exception as e:
-        print(f"⚠️ Lỗi ghi claimed_payments vào MongoDB: {e}")
+    if db is not None:
+        try:
+            db.claimed_payments.replace_one(
+                {"_id": "claimed_payments"},
+                {
+                    "_id": "claimed_payments",
+                    "trc20_txids": data.get("trc20_txids", []),
+                    "bank_tids": data.get("bank_tids", [])
+                },
+                upsert=True
+            )
+            return
+        except Exception as e:
+            print(f"⚠️ Lỗi ghi claimed_payments vào MongoDB: {e}")
+
+    # Fallback an toàn ghi vào file JSON
+    with _db_lock:
+        try:
+            CLAIMED_FILE.parent.mkdir(parents=True, exist_ok=True)
+            temp_file = CLAIMED_FILE.with_suffix(".tmp")
+            with open(temp_file, "w", encoding="utf-8") as f:
+                json.dump(data, f, ensure_ascii=False, indent=2)
+            temp_file.replace(CLAIMED_FILE)
+        except Exception as e:
+            print(f"⚠️ Lỗi ghi fallback claimed_payments.json: {e}")
 
 
 # ==============================================================================

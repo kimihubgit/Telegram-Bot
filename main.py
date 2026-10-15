@@ -7,6 +7,12 @@ Tích hợp Telethon (Userbot API) để lấy thông tin sâu.
 Để thêm chức năng mới, tạo file mới trong bot/commands/
 với function get_handlers() — sẽ tự động được load.
 """
+import sys
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+
 import asyncio
 from telegram import Update
 from telegram.ext import ApplicationBuilder
