@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm Tra & So Sánh Dữ Liệu Làm Sạch (Clean Data Preview)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --border: #334155;
+            --text-main: #f8fafc;
+            --text-sub: #94a3b8;
+            --accent: #38bdf8;
+            --sales: #ef4444;
+            --normal: #10b981;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: var(--bg);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            padding: 30px 20px;
+            line-height: 1.5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        p.desc {
+            color: var(--text-sub);
+            font-size: 15px;
+        }
+        .controls {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--card-bg);
+            padding: 15px 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+        .search-box {
+            flex: 1;
+            min-width: 250px;
+        }
+        .search-box input {
+            width: 100%;
+            padding: 10px 14px;
+            background: #0f172a;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: #fff;
+            font-size: 14px;
+            outline: none;
+        }
+        .search-box input:focus {
+            border-color: var(--accent);
+        }
+        .filter-buttons {
+            display: flex;
+            gap: 8px;
+        }
+        .btn {
+            padding: 8px 16px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: #0f172a;
+            color: var(--text-sub);
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn.active, .btn:hover {
+            background: var(--accent);
+            color: #0f172a;
+            border-color: var(--accent);
+        }
+        .sample-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .sample-card:hover {
+            border-color: #475569;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+        }
+        .card-header {
+            background: rgba(15, 23, 42, 0.6);
+            padding: 12px 18px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .sample-id {
+            font-weight: 600;
+            color: var(--text-sub);
+            font-size: 13px;
+        }
+        .badge {
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        .badge-sales {
+            background: rgba(239, 68, 68, 0.2);
+            color: #fca5a5;
+            border: 1px solid rgba(239, 68, 68, 0.4);
+        }
+        .badge-normal {
+            background: rgba(16, 185, 129, 0.2);
+            color: #6ee7b7;
+            border: 1px solid rgba(16, 185, 129, 0.4);
+        }
+        .card-body {
+            padding: 18px;
+        }
+        .version-box {
+            background: #0f172a;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 12px;
+        }
+        .version-box.raw {
+            border-color: #475569;
+            background: #141e33;
+        }
+        .version-label {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+            letter-spacing: 0.5px;
+        }
+        .raw .version-label { color: #cbd5e1; }
+        .v1 .version-label { color: #38bdf8; }
+        .v2 .version-label { color: #fbbf24; }
+        .v3 .version-label { color: #ec4899; }
+        .v4 .version-label { color: #a855f7; }
+        .version-content {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            white-space: pre-wrap;
+            word-break: break-word;
+            color: #e2e8f0;
+        }
+        .versions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 12px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: var(--text-sub);
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔬 Clean Data Preview Dashboard</h1>
+            <p class="desc">So sánh trực tiếp dữ liệu trước và sau khi xử lý qua các phiên bản làm sạch</p>
+        </header>
+
+        <div class="controls">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="🔍 Tìm kiếm từ khóa trong các mẫu..." oninput="filterSamples()">
+            </div>
+            <div class="filter-buttons">
+                <button class="btn active" onclick="setLabelFilter('all')">Tất Cả</button>
+                <button class="btn" onclick="setLabelFilter('1')">🛒 Bán Hàng</button>
+                <button class="btn" onclick="setLabelFilter('0')">💬 Tin Thường</button>
+            </div>
+        </div>
+
+        <div id="samplesList">
+            
+        <div class="sample-card" data-label="1">
+            <div class="card-header">
+                <span class="sample-id">#Mẫu 1</span>
+                <span class="badge badge-sales">🛒 BÁN HÀNG (1)</span>
+            </div>
+            <div class="card-body">
+                <div class="version-box raw">
+                    <div class="version-label">📝 Dữ Liệu Gốc (Raw Text)</div>
+                    <div class="version-content">Tổng hợp gói hiện tại:
+
+ChatGPT
+• 🔖 ChatGPT Plus 1 tháng - KBH: 11999đ
+• 🔖 Tài khoản ChatGPT miễn phí có 2FA - KBH: 450đ
+   💸 Giá sỉ từ 50: 400đ/tài khoản (có hạn)
+
+Gemini/Veo 3
+• 🔖 Google AI Pro slot 1 năm - BHF: 69K
+• 🔖 Google AI Pro 5TB 1 năm - KBH: 49K
+• 🔖 VEO3 ULTRA 0 CRD - KBH: 29K
+• 🔖 LINH - Gemini AI Pro 18 Tháng | BH 3-4M: 59K
+• 🔖 Veo 3 Ultra 25k credit - KBH: 39K (hết hàng)
+
+Canva
+• 🔖 Canva Education chính chủ 1 năm - BHF: 10K
+
+Grok
+• 🔖 Grok Super 1 tháng - BHF: 79999đ
+
+CapCut
+• 🔖 CapCut Pro Team 7D - BHF: 2900đ
+• 🔖 CapCut Pro Team 1 tháng - BHF: 9K
+• 🔖 CAPCUT 6 THÁNG - BHF: 139K
+
+Meitu
+• 🔖 Meitu VIP khoảng 7 ngày - BHF: 9K (hết hàng)
+• 🔖 Meitu SVIP - VIP+ khoảng 28 Ngày | BHF: 49K (hết hàng)
+
+Youtube
+• 🔖 YouTube Premium Family 1 tháng - BHF: 27K
+• 🔖 YouTube Premium Family 3 tháng - BHF: 77K
+• 🔖 YouTube Premium Family 6 tháng - BHF: 137K
+• 🔖 YouTube Premium Family 12 tháng - BHF: 277K
+
+Microsoft
+• 🔖 Microsoft 365 có thể dùng được 5 thiết bị 1 năm - BH lên tới 3 tháng: 39K
+
+VPN
+• 🔖 Key HMA Android/PC hạn lên đến 20-30 Ngày: 7K
+• 🔖 Express VPN hạn lên đến 25-30 Ngày: 13K (hết hàng)
+
+Adobe
+• 🔖 Adobe trial từ 3-4 tháng - KBH: 39K
+
+Kling
+• 🔖 Kling AI 1100 credit - BH 30 ngày: 199K (hết hàng)
+
+#NghienPlusMarket</div>
+                </div>
+                <div class="versions-grid">
+                    <div class="version-box v1">
+                        <div class="version-label">🔹 V1 (Light Clean)</div>
+                        <div class="version-content">Tổng hợp gói hiện tại: ChatGPT • 🔖 ChatGPT Plus 1 tháng - KBH: 11999đ • 🔖 Tài khoản ChatGPT miễn phí có 2FA - KBH: 450đ 💸 Giá sỉ từ 50: 400đ/tài khoản (có hạn) Gemini/Veo 3 • 🔖 Google AI Pro slot 1 năm - BHF: 69K • 🔖 Google AI Pro 5TB 1 năm - KBH: 49K • 🔖 VEO3 ULTRA 0 CRD - KBH: 29K • 🔖 LINH - Gemini AI Pro 18 Tháng | BH 3-4M: 59K • 🔖 Veo 3 Ultra 25k credit - KBH: 39K (hết hàng) Canva • 🔖 Canva Education chính chủ 1 năm - BHF: 10K Grok • 🔖 Grok Super 1 tháng - BHF: 79999đ CapCut • 🔖 CapCut Pro Team 7D - BHF: 2900đ • 🔖 CapCut Pro Team 1 tháng - BHF: 9K • 🔖 CAPCUT 6 THÁNG - BHF: 139K Meitu • 🔖 Meitu VIP khoảng 7 ngày - BHF: 9K (hết hàng) • 🔖 Meitu SVIP - VIP+ khoảng 28 Ngày | BHF: 49K (hết hàng) Youtube • 🔖 YouTube Premium Family 1 tháng - BHF: 27K • 🔖 YouTube Premium Family 3 tháng - BHF: 77K • 🔖 YouTube Premium Family 6 tháng - BHF: 137K • 🔖 YouTube Premium Family 12 tháng - BHF: 277K Microsoft • 🔖 Microsoft 365 có thể dùng được 5 thiết bị 1 năm - BH lên tới 3 tháng: 39K VPN • 🔖 Key HMA Android/PC hạn lên đến 20-30 Ngày: 7K • 🔖 Express VPN hạn lên đến 25-30 Ngày: 13K (hết hàng) Adobe • 🔖 Adobe trial từ 3-4 tháng - KBH: 39K Kling • 🔖 Kling AI 1100 credit - BH 30 ngày: 199K (hết hàng) #NghienPlusMarket</div>
+                    </div>
+                    <div class="version-box v2">
+                        <div class="version-label">🔸 V2 (Standard Clean)</div>
+                        <div class="version-content">tổng hợp gói hiện tại: chatgpt chatgpt plus 1 tháng - kbh: 11999đ tài khoản chatgpt miễn phí có 2fa - kbh: 450đ giá sỉ từ 50: 400đ/tài khoản (có hạn) gemini/veo 3 google ai pro slot 1 năm - bhf: 69k google ai pro 5tb 1 năm - kbh: 49k veo3 ultra 0 crd - kbh: 29k linh - gemini ai pro 18 tháng bh 3-4m: 59k veo 3 ultra 25k credit - kbh: 39k (hết hàng) canva canva education chính chủ 1 năm - bhf: 10k grok grok super 1 tháng - bhf: 79999đ capcut capcut pro team 7d - bhf: 2900đ capcut pro team 1 tháng - bhf: 9k capcut 6 tháng - bhf: 139k meitu meitu vip khoảng 7 ngày - bhf: 9k (hết hàng) meitu svip - vip+ khoảng 28 ngày bhf: 49k (hết hàng) youtube youtube premium family 1 tháng - bhf: 27k youtube premium family 3 tháng - bhf: 77k youtube premium family 6 tháng - bhf: 137k youtube premium family 12 tháng - bhf: 277k microsoft microsoft 365 có thể dùng được 5 thiết bị 1 năm - bh lên tới 3 tháng: 39k vpn key hma android/pc hạn lên đến 20-30 ngày: 7k express vpn hạn lên đến 25-30 ngày: 13k (hết hàng) adobe adobe trial từ 3-4 tháng - kbh: 39k kling kling ai 1100 credit - bh 30 ngày: 199k (hết hàng) #nghienplusmarket</div>
+                    </div>
+                    <div class="version-box v3">
+                        <div class="version-label">⚡ V3 (Deep Clean)</div>
+                        <div class="version-content">tổng hợp gói hiện tại chatgpt chatgpt plus 1 tháng kbh 11999đ tài khoản chatgpt miễn phí có 2fa kbh 450đ giá sỉ từ 50 400đ tài khoản có hạn gemini veo 3 google ai pro slot 1 năm bhf 69k google ai pro 5tb 1 năm kbh 49k veo3 ultra 0 crd kbh 29k linh gemini ai pro 18 tháng bh 3 4m 59k veo 3 ultra 25k credit kbh 39k hết hàng canva canva education chính chủ 1 năm bhf 10k grok grok super 1 tháng bhf 79999đ capcut capcut pro team 7d bhf 2900đ capcut pro team 1 tháng bhf 9k capcut 6 tháng bhf 139k meitu meitu vip khoảng 7 ngày bhf 9k hết hàng meitu svip vip khoảng 28 ngày bhf 49k hết hàng youtube youtube premium family 1 tháng bhf 27k youtube premium family 3 tháng bhf 77k youtube premium family 6 tháng bhf 137k youtube premium family 12 tháng bhf 277k microsoft microsoft 365 có thể dùng được 5 thiết bị 1 năm bh lên tới 3 tháng 39k vpn key hma android pc hạn lên đến 20 30 ngày 7k express vpn hạn lên đến 25 30 ngày 13k hết hàng adobe adobe trial từ 3 4 tháng kbh 39k kling kling ai 1100 credit bh 30 ngày 199k hết hàng nghienplusmarket</div>
+                    </div>
+                    <div class="version-box v4">
+                        <div class="version-label">💎 V4 (Sales Specialized)</div>
+                        <div class="version-content">tổng hợp gói hiện tại: chatgpt chatgpt plus 1 tháng - kbh: 11999đ tài khoản chatgpt miễn phí có 2fa - kbh: 450đ giá sỉ từ 50: 400đ/tài khoản (có hạn) gemini/veo 3 google ai pro suất slot 1 năm - bảo hành full: 69 nghìn google ai pro 5tb 1 năm - kbh: 49 nghìn veo3 ultra 0 crd - kbh: 29 nghìn linh - gemini ai pro 18 tháng bảo hành 3-4 triệu: 59 nghìn veo 3 ultra 25 nghìn credit - kbh: 39 nghìn (hết hàng) canva canva education chính chủ uy tín 1 năm - bảo hành full: 10 nghìn grok grok super 1 tháng - bảo hành full: 79999đ capcut capcut pro team 7d - bảo hành full: 2900đ capcut pro team 1 tháng - bảo hành full: 9 nghìn capcut 6 tháng - bảo hành full: 139 nghìn meitu meitu vip khoảng 7 ngày - bảo hành full: 9 nghìn (hết hàng) meitu svip - vip+ khoảng 28 ngày bảo hành full: 49 nghìn (hết hàng) youtube youtube premium family 1 tháng - bảo hành full: 27 nghìn youtube premium family 3 tháng - bảo hành full: 77 nghìn youtube premium family 6 tháng - bảo hành full: 137 nghìn youtube premium family 12 tháng - bảo hành full: 277 nghìn microsoft microsoft 365 có thể dùng được 5 thiết bị 1 năm - bảo hành lên tới 3 tháng: 39 nghìn vpn key hma android/pc hạn lên đến 20-30 ngày: 7 nghìn express vpn hạn lên đến 25-30 ngày: 13 nghìn (hết hàng) adobe adobe trial từ 3-4 tháng - kbh: 39 nghìn kling kling ai 1100 credit - bảo hành 30 ngày: 199 nghìn (hết hàng) #nghienplusmarket</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="sample-card" data-label="1">
+            <div class="card-header">
+                <span class="sample-id">#Mẫu 2</span>
+                <span class="badge badge-sales">🛒 BÁN HÀNG (1)</span>
+            </div>
+            <div class="card-body">
+                <div class="version-box raw">
+                    <div class="version-label">📝 Dữ Liệu Gốc (Raw Text)</div>
+                    <div class="version-content">Claude max 5x 20x đê
+Cursor pro+, ultra đê
+#NghienPlusMarket</div>
+                </div>
+                <div class="versions-grid">
+                    <div class="version-box v1">
+                        <div class="version-label">🔹 V1 (Light Clean)</div>
+                        <div class="version-content">Claude max 5x 20x đê Cursor pro+, ultra đê #NghienPlusMarket</div>
+                    </div>
+                    <div class="version-box v2">
+                        <div class="version-label">🔸 V2 (Standard Clean)</div>
+                        <div class="version-content">claude max 5x 20x đê cursor pro+, ultra đê #nghienplusmarket</div>
+                    </div>
+                    <div class="version-box v3">
+                        <div class="version-label">⚡ V3 (Deep Clean)</div>
+                        <div class="version-content">claude max 5x 20x đê cursor pro ultra đê nghienplusmarket</div>
+                    </div>
+                    <div class="version-box v4">
+                        <div class="version-label">💎 V4 (Sales Specialized)</div>
+                        <div class="version-content">claude max 5x 20x đê cursor pro+, ultra đê #nghienplusmarket</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="sample-card" data-label="1">
+            <div class="card-header">
+                <span class="sample-id">#Mẫu 3</span>
+                <span class="badge badge-sales">🛒 BÁN HÀNG (1)</span>
+            </div>
+            <div class="card-body">
+                <div class="version-box raw">
+                    <div class="version-label">📝 Dữ Liệu Gốc (Raw Text)</div>
+                    <div class="version-content">- Gamma plus 100k, pro 150k, ultra 250k 1 tháng
+- Grok Super chính chủ 300k 1 tháng
+- Chatgpt Plus inapp 460k
+- Quizlet plus 120k 1 năm, Quizlet plus unlimited 200k 1 năm
+- GG one AI 5TB Drive, Gemini pro, Notebooklm pro 1 năm 200k
+- Zoom pro renew chính chủ 1 tháng 70k , 1 năm 600k
+- Canva edu 50k 1 năm 
+- Canva pro cá nhân 3 tháng 60k 
+- Figma edu 120k 1 năm
+- Jetbrain edu 120k 1 năm
+- Office 365 personal 150k 1 năm
+- Office 365 premium 250k 1 năm
+- Slot office 365 80k 1 năm
+- Dify pro 150k 1 năm
+- Autodesk 1 app 1 năm 120k
+- key Hma vpn 30d 20k
+- Notion business 150k 3 tháng
+- Nord VPN 3 tháng 150k, 1 năm 550k
+
+#NghienPlusMarket</div>
+                </div>
+                <div class="versions-grid">
+                    <div class="version-box v1">
+                        <div class="version-label">🔹 V1 (Light Clean)</div>
+                        <div class="version-content">- Gamma plus 100k, pro 150k, ultra 250k 1 tháng - Grok Super chính chủ 300k 1 tháng - Chatgpt Plus inapp 460k - Quizlet plus 120k 1 năm, Quizlet plus unlimited 200k 1 năm - GG one AI 5TB Drive, Gemini pro, Notebooklm pro 1 năm 200k - Zoom pro renew chính chủ 1 tháng 70k , 1 năm 600k - Canva edu 50k 1 năm - Canva pro cá nhân 3 tháng 60k - Figma edu 120k 1 năm - Jetbrain edu 120k 1 năm - Office 365 personal 150k 1 năm - Office 365 premium 250k 1 năm - Slot office 365 80k 1 năm - Dify pro 150k 1 năm - Autodesk 1 app 1 năm 120k - key Hma vpn 30d 20k - Notion business 150k 3 tháng - Nord VPN 3 tháng 150k, 1 năm 550k #NghienPlusMarket</div>
+                    </div>
+                    <div class="version-box v2">
+                        <div class="version-label">🔸 V2 (Standard Clean)</div>
+                        <div class="version-content">- gamma plus 100k, pro 150k, ultra 250k 1 tháng - grok super chính chủ 300k 1 tháng - chatgpt plus inapp 460k - quizlet plus 120k 1 năm, quizlet plus unlimited 200k 1 năm - gg one ai 5tb drive, gemini pro, notebooklm pro 1 năm 200k - zoom pro renew chính chủ 1 tháng 70k , 1 năm 600k - canva edu 50k 1 năm - canva pro cá nhân 3 tháng 60k - figma edu 120k 1 năm - jetbrain edu 120k 1 năm - office 365 personal 150k 1 năm - office 365 premium 250k 1 năm - slot office 365 80k 1 năm - dify pro 150k 1 năm - autodesk 1 app 1 năm 120k - key hma vpn 30d 20k - notion business 150k 3 tháng - nord vpn 3 tháng 150k, 1 năm 550k #nghienplusmarket</div>
+                    </div>
+                    <div class="version-box v3">
+                        <div class="version-label">⚡ V3 (Deep Clean)</div>
+                        <div class="version-content">gamma plus 100k pro 150k ultra 250k 1 tháng grok super chính chủ 300k 1 tháng chatgpt plus inapp 460k quizlet plus 120k 1 năm quizlet plus unlimited 200k 1 năm gg one ai 5tb drive gemini pro notebooklm pro 1 năm 200k zoom pro renew chính chủ 1 tháng 70k 1 năm 600k canva edu 50k 1 năm canva pro cá nhân 3 tháng 60k figma edu 120k 1 năm jetbrain edu 120k 1 năm office 365 personal 150k 1 năm office 365 premium 250k 1 năm slot office 365 80k 1 năm dify pro 150k 1 năm autodesk 1 app 1 năm 120k key hma vpn 30d 20k notion business 150k 3 tháng nord vpn 3 tháng 150k 1 năm 550k nghienplusmarket</div>
+                    </div>
+                    <div class="version-box v4">
+                        <div class="version-label">💎 V4 (Sales Specialized)</div>
+                        <div class="version-content">- gamma plus 100 nghìn, pro 150 nghìn, ultra 250 nghìn 1 tháng - grok super chính chủ uy tín 300 nghìn 1 tháng - chatgpt plus inapp 460 nghìn - quizlet plus 120 nghìn 1 năm, quizlet plus unlimited 200 nghìn 1 năm - gg one ai 5tb drive, gemini pro, notebooklm pro 1 năm 200 nghìn - zoom pro renew chính chủ uy tín 1 tháng 70 nghìn , 1 năm 600 nghìn - canva edu 50 nghìn 1 năm - canva pro cá nhân 3 tháng 60 nghìn - figma edu 120 nghìn 1 năm - jetbrain edu 120 nghìn 1 năm - office 365 personal 150 nghìn 1 năm - office 365 premium 250 nghìn 1 năm - suất slot office 365 80 nghìn 1 năm - dify pro 150 nghìn 1 năm - autodesk 1 app 1 năm 120 nghìn - key hma vpn 30d 20 nghìn - notion business 150 nghìn 3 tháng - nord vpn 3 tháng 150 nghìn, 1 năm 550 nghìn #nghienplusmarket</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="sample-card" data-label="1">
+            <div class="card-header">
+                <span class="sample-id">#Mẫu 4</span>
+                <span class="badge badge-sales">🛒 BÁN HÀNG (1)</span>
+            </div>
+            <div class="card-body">
+                <div class="version-box raw">
+                    <div class="version-label">📝 Dữ Liệu Gốc (Raw Text)</div>
+                    <div class="version-content">- GPT plus 1M: 40k BHF 
+- Sẵn sll acc plus 1 năm hàng quân nhân 336k
+- Nhận gia hạn plus 50k bhf done 1p
+- GPT Go 1Y: 65k
+- ADMIN GPT bussiness 120k BHF 
+- Gemini pixel mail cổ bh 1 tuần 59/1
+- Super Grok 1M: 20k BHF
+- Super Grok 6M: 100k BH gói hết sk
+- Super Grok 1Y: 180k BH gói hết sk
+SLL ib có fix, Có bot tự oder
+#NghienPlusMarket</div>
+                </div>
+                <div class="versions-grid">
+                    <div class="version-box v1">
+                        <div class="version-label">🔹 V1 (Light Clean)</div>
+                        <div class="version-content">- GPT plus 1M: 40k BHF - Sẵn sll acc plus 1 năm hàng quân nhân 336k - Nhận gia hạn plus 50k bhf done 1p - GPT Go 1Y: 65k - ADMIN GPT bussiness 120k BHF - Gemini pixel mail cổ bh 1 tuần 59/1 - Super Grok 1M: 20k BHF - Super Grok 6M: 100k BH gói hết sk - Super Grok 1Y: 180k BH gói hết sk SLL ib có fix, Có bot tự oder #NghienPlusMarket</div>
+                    </div>
+                    <div class="version-box v2">
+                        <div class="version-label">🔸 V2 (Standard Clean)</div>
+                        <div class="version-content">- gpt plus 1m: 40k bhf - sẵn sll acc plus 1 năm hàng quân nhân 336k - nhận gia hạn plus 50k bhf done 1p - gpt go 1y: 65k - admin gpt bussiness 120k bhf - gemini pixel mail cổ bh 1 tuần 59/1 - super grok 1m: 20k bhf - super grok 6m: 100k bh gói hết sk - super grok 1y: 180k bh gói hết sk sll ib có fix, có bot tự oder #nghienplusmarket</div>
+                    </div>
+                    <div class="version-box v3">
+                        <div class="version-label">⚡ V3 (Deep Clean)</div>
+                        <div class="version-content">gpt plus 1m 40k bhf sẵn sll acc plus 1 năm hàng quân nhân 336k nhận gia hạn plus 50k bhf done 1p gpt go 1y 65k admin gpt bussiness 120k bhf gemini pixel mail cổ bh 1 tuần 59 1 super grok 1m 20k bhf super grok 6m 100k bh gói hết sk super grok 1y 180k bh gói hết sk sll ib có fix có bot tự oder nghienplusmarket</div>
+                    </div>
+                    <div class="version-box v4">
+                        <div class="version-label">💎 V4 (Sales Specialized)</div>
+                        <div class="version-content">- gpt plus 1 triệu: 40 nghìn bảo hành full - sẵn số lượng lớn tài khoản plus 1 năm hàng quân nhân 336 nghìn - nhận gia hạn plus 50 nghìn bảo hành full done 1p - gpt go 1y: 65 nghìn - admin gpt bussiness 120 nghìn bảo hành full - gemini pixel mail cổ bảo hành 1 tuần 59/1 - super grok 1 triệu: 20 nghìn bảo hành full - super grok 6 triệu: 100 nghìn bảo hành gói hết sk - super grok 1y: 180 nghìn bảo hành gói hết sk số lượng lớn inbox có fix, có bot tự oder #nghienplusmarket</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="sample-card" data-label="1">
+            <div class="card-header">
+                <span class="sample-id">#Mẫu 5</span>
+                <span class="badge badge-sales">🛒 BÁN HÀNG (1)</span>
+            </div>
+            <div class="card-body">
+                <div class="version-box raw">
+                    <div class="version-label">📝 Dữ Liệu Gốc (Raw Text)</div>
+                    <div class="version-content">Sẵn rate dbrr</div>
+                </div>
+                <div class="versions-grid">
+                    <div class="version-box v1">
+                        <div class="version-label">🔹 V1 (Light Clean)</div>
+                        <div class="version-content">Sẵn rate dbrr</div>
+                    </div>
+                    <div class="version-box v2">
+                        <div class="version-label">🔸 V2 (Standard Clean)</div>
+                        <div class="version-content">sẵn rate dbrr</div>
+                    </div>
+                    <div class="version-box v3">
+                        <div class="version-label">⚡ V3 (Deep Clean)</div>
+                        <div class="version-content">sẵn rate dbrr</div>
+                    </div>
+                    <div class="version-box v4">
+                        <div class="version-label">💎 V4 (Sales Specialized)</div>
+                        <div class="version-content">sẵn rate dbrr</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="sample-card" data-label="0">
+            <div class="card-header">
+                <span class="sample-id">#Mẫu 6</span>
+                <span class="badge badge-normal">💬 THƯỜNG (0)</span>
+            </div>
+            <div class="card-body">
+                <div class="version-box raw">
+                    <div class="version-label">📝 Dữ Liệu Gốc (Raw Text)</div>
+                    <div class="version-content">tìm 1 heavy 1 năm kbh 30k</div>
+                </div>
+                <div class="versions-grid">
+                    <div class="version-box v1">
+                        <div class="version-label">🔹 V1 (Light Clean)</div>
+                        <div class="version-content">tìm 1 heavy 1 năm kbh 30k</div>
+                    </div>
+                    <div class="version-box v2">
+                        <div class="version-label">🔸 V2 (Standard Clean)</div>
+                        <div class="version-content">tìm 1 heavy 1 năm kbh 30k</div>
+                    </div>
+                    <div class="version-box v3">
+                        <div class="version-label">⚡ V3 (Deep Clean)</div>
+                        <div class="version-content">tìm 1 heavy 1 năm kbh 30k</div>
+                    </div>
+                    <div class="version-box v4">
+                        <div class="version-label">💎 V4 (Sales Specialized)</div>
+                        <div class="version-content">tìm 1 heavy 1 năm kbh 30 nghìn</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="sample-card" data-label="0">
+            <div class="card-header">
+                <span class="sample-id">#Mẫu 7</span>
+                <span class="badge badge-normal">💬 THƯỜNG (0)</span>
+            </div>
+            <div class="card-body">
+                <div class="version-box raw">
+                    <div class="version-label">📝 Dữ Liệu Gốc (Raw Text)</div>
+                    <div class="version-content">Diy Thanh(6267109964) cẩn thận khi giao dịch nhé nên giao dịch trung gian qua admin @vmenpn để tránh bị scam!</div>
+                </div>
+                <div class="versions-grid">
+                    <div class="version-box v1">
+                        <div class="version-label">🔹 V1 (Light Clean)</div>
+                        <div class="version-content">Diy Thanh(6267109964) cẩn thận khi giao dịch nhé nên giao dịch trung gian qua admin @vmenpn để tránh bị scam!</div>
+                    </div>
+                    <div class="version-box v2">
+                        <div class="version-label">🔸 V2 (Standard Clean)</div>
+                        <div class="version-content">diy thanh(6267109964) cẩn thận khi giao dịch nhé nên giao dịch trung gian qua admin @vmenpn để tránh bị scam!</div>
+                    </div>
+                    <div class="version-box v3">
+                        <div class="version-label">⚡ V3 (Deep Clean)</div>
+                        <div class="version-content"><em style="color:#888;">(Đã bị lọc rỗng)</em></div>
+                    </div>
+                    <div class="version-box v4">
+                        <div class="version-label">💎 V4 (Sales Specialized)</div>
+                        <div class="version-content"><em style="color:#888;">(Đã bị lọc rỗng)</em></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="sample-card" data-label="0">
+            <div class="card-header">
+                <span class="sample-id">#Mẫu 8</span>
+                <span class="badge badge-normal">💬 THƯỜNG (0)</span>
+            </div>
+            <div class="card-body">
+                <div class="version-box raw">
+                    <div class="version-label">📝 Dữ Liệu Gốc (Raw Text)</div>
+                    <div class="version-content">Rổ giá cho gift higgfield gì đấy bác</div>
+                </div>
+                <div class="versions-grid">
+                    <div class="version-box v1">
+                        <div class="version-label">🔹 V1 (Light Clean)</div>
+                        <div class="version-content">Rổ giá cho gift higgfield gì đấy bác</div>
+                    </div>
+                    <div class="version-box v2">
+                        <div class="version-label">🔸 V2 (Standard Clean)</div>
+                        <div class="version-content">rổ giá cho gift higgfield gì đấy bác</div>
+                    </div>
+                    <div class="version-box v3">
+                        <div class="version-label">⚡ V3 (Deep Clean)</div>
+                        <div class="version-content">rổ giá cho gift higgfield gì đấy bác</div>
+                    </div>
+                    <div class="version-box v4">
+                        <div class="version-label">💎 V4 (Sales Specialized)</div>
+                        <div class="version-content">rổ giá cho gift higgfield gì đấy bác</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="sample-card" data-label="0">
+            <div class="card-header">
+                <span class="sample-id">#Mẫu 9</span>
+                <span class="badge badge-normal">💬 THƯỜNG (0)</span>
+            </div>
+            <div class="card-body">
+                <div class="version-box raw">
+                    <div class="version-label">📝 Dữ Liệu Gốc (Raw Text)</div>
+                    <div class="version-content">zzz(706288821) cẩn thận khi giao dịch nhé nên giao dịch trung gian qua admin @vmenpn và @manhjisme để tránh bị scam!</div>
+                </div>
+                <div class="versions-grid">
+                    <div class="version-box v1">
+                        <div class="version-label">🔹 V1 (Light Clean)</div>
+                        <div class="version-content">zzz(706288821) cẩn thận khi giao dịch nhé nên giao dịch trung gian qua admin @vmenpn và @manhjisme để tránh bị scam!</div>
+                    </div>
+                    <div class="version-box v2">
+                        <div class="version-label">🔸 V2 (Standard Clean)</div>
+                        <div class="version-content">zzz(706288821) cẩn thận khi giao dịch nhé nên giao dịch trung gian qua admin @vmenpn và @manhjisme để tránh bị scam!</div>
+                    </div>
+                    <div class="version-box v3">
+                        <div class="version-label">⚡ V3 (Deep Clean)</div>
+                        <div class="version-content"><em style="color:#888;">(Đã bị lọc rỗng)</em></div>
+                    </div>
+                    <div class="version-box v4">
+                        <div class="version-label">💎 V4 (Sales Specialized)</div>
+                        <div class="version-content"><em style="color:#888;">(Đã bị lọc rỗng)</em></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="sample-card" data-label="0">
+            <div class="card-header">
+                <span class="sample-id">#Mẫu 10</span>
+                <span class="badge badge-normal">💬 THƯỜNG (0)</span>
+            </div>
+            <div class="card-body">
+                <div class="version-box raw">
+                    <div class="version-label">📝 Dữ Liệu Gốc (Raw Text)</div>
+                    <div class="version-content">Ai có gpt kbh  k</div>
+                </div>
+                <div class="versions-grid">
+                    <div class="version-box v1">
+                        <div class="version-label">🔹 V1 (Light Clean)</div>
+                        <div class="version-content">Ai có gpt kbh k</div>
+                    </div>
+                    <div class="version-box v2">
+                        <div class="version-label">🔸 V2 (Standard Clean)</div>
+                        <div class="version-content">ai có gpt kbh k</div>
+                    </div>
+                    <div class="version-box v3">
+                        <div class="version-label">⚡ V3 (Deep Clean)</div>
+                        <div class="version-content">ai có gpt kbh k</div>
+                    </div>
+                    <div class="version-box v4">
+                        <div class="version-label">💎 V4 (Sales Specialized)</div>
+                        <div class="version-content">ai có gpt kbh không</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        </div>
+
+        <div class="footer">
+            Phòng thí nghiệm dữ liệu AI KiGuard • Hỗ trợ huấn luyện PhoBERT & TF-IDF
+        </div>
+    </div>
+
+    <script>
+        let currentFilter = 'all';
+
+        function setLabelFilter(filter) {
+            currentFilter = filter;
+            document.querySelectorAll('.filter-buttons .btn').forEach(b => b.classList.remove('active'));
+            event.target.classList.add('active');
+            filterSamples();
+        }
+
+        function filterSamples() {
+            const search = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.sample-card');
+
+            cards.forEach(card => {
+                const label = card.getAttribute('data-label');
+                const text = card.textContent.toLowerCase();
+
+                const matchesLabel = (currentFilter === 'all') || (label === currentFilter);
+                const matchesSearch = text.includes(search);
+
+                if (matchesLabel && matchesSearch) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

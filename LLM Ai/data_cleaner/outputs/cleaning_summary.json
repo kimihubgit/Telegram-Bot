@@ -1,0 +1,54 @@
+{
+  "timestamp": "2026-10-15 14:48:03",
+  "raw_samples": 5281,
+  "versions": [
+    {
+      "version": "v1",
+      "description": "V1 - Light Clean (Giữ nguyên Emoji, URL, dấu câu)",
+      "filename": "dataset_v1_light.csv",
+      "output_path": "F:\\bot telegram\\LLM Ai\\data_cleaner\\outputs\\dataset_v1_light.csv",
+      "total_samples": 5275,
+      "sales_count": 1348,
+      "normal_count": 3927,
+      "vocab_size": 14126,
+      "avg_char_length": 151.3,
+      "avg_word_count": 30.6
+    },
+    {
+      "version": "v2",
+      "description": "V2 - Standard Clean (Tiêu chuẩn, khử emoji, URL, chữ thường)",
+      "filename": "dataset_v2_standard.csv",
+      "output_path": "F:\\bot telegram\\LLM Ai\\data_cleaner\\outputs\\dataset_v2_standard.csv",
+      "total_samples": 5272,
+      "sales_count": 1348,
+      "normal_count": 3924,
+      "vocab_size": 9873,
+      "avg_char_length": 145.4,
+      "avg_word_count": 28.7
+    },
+    {
+      "version": "v3",
+      "description": "V3 - Deep Clean (Siêu sạch, khử @username, ID số, dấu câu rác)",
+      "filename": "dataset_v3_deep.csv",
+      "output_path": "F:\\bot telegram\\LLM Ai\\data_cleaner\\outputs\\dataset_v3_deep.csv",
+      "total_samples": 4526,
+      "sales_count": 1343,
+      "normal_count": 3183,
+      "vocab_size": 5023,
+      "avg_char_length": 141.6,
+      "avg_word_count": 30.0
+    },
+    {
+      "version": "v4",
+      "description": "V4 - Sales Specialized (Quy đổi 200k, 1th, dịch viết tắt bh, ib, sll)",
+      "filename": "dataset_v4_sales.csv",
+      "output_path": "F:\\bot telegram\\LLM Ai\\data_cleaner\\outputs\\dataset_v4_sales.csv",
+      "total_samples": 4547,
+      "sales_count": 1348,
+      "normal_count": 3199,
+      "vocab_size": 8114,
+      "avg_char_length": 174.8,
+      "avg_word_count": 34.9
+    }
+  ]
+}
