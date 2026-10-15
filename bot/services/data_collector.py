@@ -12,8 +12,12 @@ import hashlib
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
-# Thư mục gốc chứa dữ liệu thu thập (nằm ngay trong 'bot/LLM Ai/collected_data')
-_BASE_DIR = Path(__file__).resolve().parent.parent / "LLM Ai" / "collected_data"
+# Thư mục gốc chứa dữ liệu thu thập (hỗ trợ cả 'LLM Ai' ở root và 'bot/LLM Ai')
+_candidate1 = Path(__file__).resolve().parent.parent.parent / "LLM Ai"
+_candidate2 = Path(__file__).resolve().parent.parent / "LLM Ai"
+_llm_ai_dir = _candidate1 if _candidate1.exists() else _candidate2
+
+_BASE_DIR = _llm_ai_dir / "collected_data"
 _SALES_DIR = _BASE_DIR / "ban_hang"
 _NON_SALES_DIR = _BASE_DIR / "khong_ban_hang"
 

@@ -23,7 +23,10 @@ from telegram.ext import (
 import sys
 from pathlib import Path
 
-_llm_dir = Path(__file__).resolve().parent.parent / "LLM Ai"
+_candidate1 = Path(__file__).resolve().parent.parent.parent / "LLM Ai"
+_candidate2 = Path(__file__).resolve().parent.parent / "LLM Ai"
+_llm_dir = _candidate1 if _candidate1.exists() else _candidate2
+
 if str(_llm_dir) not in sys.path:
     sys.path.insert(0, str(_llm_dir))
 

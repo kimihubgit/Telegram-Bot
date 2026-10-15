@@ -15,14 +15,14 @@ data/user_violations.json
 data/market_posts_tracker.json
 
 # File export tin nhắn thô và dữ liệu quá nặng
-bot/LLM Ai/result.json
-bot/LLM Ai/result2.json
-bot/LLM Ai/telegram_clean.csv
-bot/LLM Ai/dataset_backup.csv
-bot/LLM Ai/chatExport/
-bot/LLM Ai/phobert_kiguard_checkpoints/
-bot/LLM Ai/phobert_kiguard_best_model/
-bot/LLM Ai/*.zip
+**/result.json
+**/result2.json
+**/telegram_clean.csv
+**/dataset_backup.csv
+**/chatExport/
+**/phobert_kiguard_checkpoints/
+**/phobert_kiguard_best_model/
+**/*.zip
 data/bin-list-data.csv
 
 # Python environment & cache
