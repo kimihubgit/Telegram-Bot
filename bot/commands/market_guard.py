@@ -35,7 +35,6 @@ from bot.services.data_collector import save_message_for_training, get_collector
 from bot.utils.logger import log_command
 
 # === Cấu hình Market Guard ===
-REQUIRED_HASHTAG = "#NghienPlusMarket"
 MAX_SALES_PER_DAY = 6
 MUTE_DURATION_HOURS = 12
 AUTO_DELETE_WARNING_SECONDS = 60  # Xóa tin nhắc nhở sau 60s để không loãng group
@@ -116,7 +115,7 @@ async def market_guard_message_handler(update: Update, context: ContextTypes.DEF
     """
     Middleware quét nội dung tin nhắn gửi vào nhóm.
     Nếu AI phát hiện là tin rao bán:
-    - Kiểm tra hashtag #NghienPlusMarket
+    - Thu thập dữ liệu vào kho data
     - Đếm số bài trong ngày, mute nếu vượt quá hạn mức 6 bài/ngày.
     """
     msg = update.effective_message
@@ -175,12 +174,11 @@ async def market_guard_message_handler(update: Update, context: ContextTypes.DEF
     # PHÁT HIỆN TIN BÁN HÀNG / DỊCH VỤ!
     # ══════════════════════════════════════════════════════════════
     full_name = user.full_name or user.first_name or "Bạn"
-    has_hashtag = REQUIRED_HASHTAG.lower() in text.lower()
 
     # Kiểm tra hạn mức bài rao bán trong ngày
     count_today = _get_user_posts_today(user.id)
 
-    # TRƯỜNG HỢP 1: Vượt quá giới hạn bài rao bán trong ngày (>= 6 bài)
+    # Vượt quá giới hạn bài rao bán trong ngày (>= 6 bài)
     if count_today >= MAX_SALES_PER_DAY:
         # Xóa tin nhắn vi phạm
         try:
@@ -213,23 +211,7 @@ async def market_guard_message_handler(update: Update, context: ContextTypes.DEF
         return
 
     # Tăng số lượng bài đăng bán trong ngày
-    new_count = _increment_user_posts(user.id)
-
-    # TRƯỜNG HỢP 2: Bài đăng thiếu hashtag yêu cầu
-    if not has_hashtag:
-        warning_text = f"{full_name} hãy thêm hashtag {REQUIRED_HASHTAG} vào bài nếu là rao bán hàng nhé!"
-        try:
-            warn_msg = await msg.reply_text(warning_text)
-
-            # Tự động xóa cảnh báo sau 60s để giữ group sạch sẽ
-            if context.job_queue:
-                context.job_queue.run_once(
-                    _delete_message_after_delay,
-                    AUTO_DELETE_WARNING_SECONDS,
-                    data={"chat_id": chat.id, "message_id": warn_msg.message_id}
-                )
-        except Exception as e:
-            print(f"⚠️ [Market Guard] Không gửi được lời nhắc hashtag: {e}")
+    _increment_user_posts(user.id)
 
 
 async def check_sales_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -261,11 +243,8 @@ async def check_sales_command(update: Update, context: ContextTypes.DEFAULT_TYPE
     is_sales = analysis["is_sales"]
     conf = analysis["confidence"]
     engine = analysis["engine"]
-    clean_t = analysis["clean_text"]
-    has_tag = REQUIRED_HASHTAG.lower() in text_to_check.lower()
-
+    clean_t = analysis.get("clean_text", "")
     status_icon = "🛒 BÁN HÀNG / RAO VẶT (1)" if is_sales else "💬 BÌNH THƯỜNG / HỎI MUA (0)"
-    tag_status = "✅ Đã có" if has_tag else f"❌ Thiếu ({REQUIRED_HASHTAG})"
 
     response = (
         f"🤖 <b>KiGuard AI - Sales Detector</b>\n"
@@ -273,7 +252,6 @@ async def check_sales_command(update: Update, context: ContextTypes.DEFAULT_TYPE
         f"📊 <b>Kết quả:</b> {status_icon}\n"
         f"🎯 <b>Độ tin cậy:</b> <code>{conf:.2f}%</code>\n"
         f"⚙️ <b>Engine AI:</b> <code>{engine}</code>\n"
-        f"🏷️ <b>Hashtag:</b> {tag_status}\n"
         f"━━━━━━━━━━━━━━━━━━━━\n"
         f"🧹 <b>Đã khử nhiễu:</b> <i>{clean_t[:150]}...</i>" if len(clean_t) > 150 else
         f"🧹 <b>Đã khử nhiễu:</b> <i>{clean_t}</i>"
