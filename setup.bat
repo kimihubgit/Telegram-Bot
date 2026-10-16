@@ -79,17 +79,6 @@ if exist ".env" (
         set TELETHON_API_HASH=
     )
 
-    :: Prompt Backup Bot
-    echo.
-    set /p USE_BACKUP="📦 Bạn có muốn dùng Backup Bot (gửi log hàng ngày)? (y/n): "
-    if /i "%USE_BACKUP%"=="y" (
-        set /p BACKUP_BOT_TOKEN="   🔑 BACKUP_BOT_TOKEN: "
-        set /p BACKUP_CHAT_ID="   💬 BACKUP_CHAT_ID (nơi nhận backup): "
-    ) else (
-        set BACKUP_BOT_TOKEN=
-        set BACKUP_CHAT_ID=
-    )
-
     :: Write .env file
     (
         echo # ═══════════════════════════════════════
@@ -112,10 +101,6 @@ if exist ".env" (
         echo.
         echo # [TÙY CHỌN] Admin IDs cho /notification (phân cách bằng dấu phẩy)
         echo NOTIFICATION_ADMIN_IDS=%ADMIN_CHAT_ID%
-        echo.
-        echo # [TÙY CHỌN] Backup Bot
-        echo BACKUP_BOT_TOKEN=%BACKUP_BOT_TOKEN%
-        echo BACKUP_CHAT_ID=%BACKUP_CHAT_ID%
     ) > .env
 
     echo.

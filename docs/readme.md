@@ -214,10 +214,9 @@ Khởi động lại bot → lệnh `/hello` tự động hoạt động.
 
 Khởi Động: 
 terminal 1: Chạy bot
-Terminal 2: Backup Data
-Terminal 3: Get Lịch Sử Giao Dịch Các Cổng
-Termianl 4: Chạy Frontend, Quản lí bot - admin
-Terminal 5: Chạy Database MongoDB
+Terminal 2: Get Lịch Sử Giao Dịch Các Cổng
+Termianl 3: Chạy Frontend, Quản lí bot - admin
+Terminal 4: Chạy Database MongoDB
 
 ## 🚀 Cài Đặt Nâng Cao (Docker)
 

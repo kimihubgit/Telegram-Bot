@@ -24,10 +24,6 @@ class Config:
     MONGO_URI = os.getenv("MONGO_URI", "mongodb://localhost:27017")
     MONGO_DB_NAME = os.getenv("MONGO_DB_NAME", "telegram")
 
-    # Backup Bot Config
-    BACKUP_BOT_TOKEN = os.getenv("BACKUP_BOT_TOKEN", "")
-    BACKUP_CHAT_ID = os.getenv("BACKUP_CHAT_ID", "")
-
     # Donate Config (MB Bank, Binance, TRC20 Wallet, Webhook Port)
     DONATE_BANK_NAME = os.getenv("DONATE_BANK_NAME", "MB Bank (Ngân hàng Quân Đội)")
     DONATE_BANK_ACC = os.getenv("DONATE_BANK_ACC", "999999999999")
